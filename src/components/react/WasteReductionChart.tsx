@@ -12,9 +12,11 @@ interface Props {
   title: string;
   subtitle: string;
   data: ChartData[];
+  beforeLabel?: string;
+  afterLabel?: string;
 }
 
-export default function WasteReductionChart({ title, subtitle, data }: Props) {
+export default function WasteReductionChart({ title, subtitle, data, beforeLabel = "Before", afterLabel = "After" }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(chartRef, { once: true, margin: "-100px" });
 
@@ -51,7 +53,7 @@ export default function WasteReductionChart({ title, subtitle, data }: Props) {
               className="text-sm font-medium"
               style={{ color: "#4A5568" }}
             >
-              Before
+              {beforeLabel}
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -63,7 +65,7 @@ export default function WasteReductionChart({ title, subtitle, data }: Props) {
               className="text-sm font-medium"
               style={{ color: "#4A5568" }}
             >
-              After
+              {afterLabel}
             </span>
           </div>
         </div>

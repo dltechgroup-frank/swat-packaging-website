@@ -23,6 +23,9 @@
   --color-accent-100: #C7F2DF;
   --color-accent-50: #ECFBF3;
 
+  /* Safety Orange (carousel progress) */
+  --color-safety-orange: #FF6700;
+
   /* Surfaces */
   --color-surface-white: #FFFFFF;
   --color-surface-light: #F8FAFB;

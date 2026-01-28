@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/sections/Hero.astro';
+import HeroCarousel from '../../components/react/HeroCarousel';
+import WasteReductionChart from '../../components/react/WasteReductionChart';
 import VeritivBadge from '../../components/shared/VeritivBadge.astro';
 import TrustBar from '../../components/sections/TrustBar.astro';
 import ServiceGrid from '../../components/sections/ServiceGrid.astro';
@@ -8,21 +9,31 @@ import NearshoreSection from '../../components/sections/NearshoreSection.astro';
 import SectorShowcase from '../../components/sections/SectorShowcase.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
 import Container from '../../components/ui/Container.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
 import type { Locale } from '../../i18n/config';
 import { t, localizeHref } from '../../i18n/utils';
 import { getTrustStats } from '../../data/stats';
 
 const locale: Locale = 'en';
 const trustStats = getTrustStats(locale);
+
+const carouselSlides = [1, 2, 3, 4, 5].map((n) => ({
+  tag: t(locale, `carousel.slide${n}.tag`),
+  title: t(locale, `carousel.slide${n}.title`),
+  subtitle: t(locale, `carousel.slide${n}.subtitle`),
+  cta: { text: t(locale, `carousel.slide${n}.cta`), href: localizeHref(locale, '/audit') },
+}));
+
+const chartData = [
+  { label: t(locale, 'chart.materialWaste'), before: 100, after: 70, unit: '%' },
+  { label: t(locale, 'chart.freightCost'), before: 100, after: 80, unit: '%' },
+  { label: t(locale, 'chart.complianceGaps'), before: 85, after: 15, unit: '%' },
+  { label: t(locale, 'chart.packagingFootprint'), before: 100, after: 80, unit: '%' },
+];
 ---
 
 <BaseLayout title={t(locale, 'home.title')} locale={locale}>
-  <Hero
-    title={t(locale, 'home.heroTitle')}
-    subtitle={t(locale, 'home.heroSubtitle')}
-    cta={{ text: t(locale, 'home.heroCta'), href: localizeHref(locale, '/audit') }}
-    secondaryCta={{ text: t(locale, 'home.heroSecondaryCta'), href: localizeHref(locale, '/services') }}
-  />
+  <HeroCarousel slides={carouselSlides} interval={6000} client:load />
 
   <section class="py-10 bg-white">
     <Container>
@@ -35,6 +46,20 @@ const trustStats = getTrustStats(locale);
   <TrustBar stats={trustStats} />
 
   <ServiceGrid locale={locale} />
+
+  <!-- Waste Reduction Chart -->
+  <section class="py-20 lg:py-28 bg-white">
+    <Container narrow>
+      <WasteReductionChart
+        title={t(locale, 'chart.wasteTitle')}
+        subtitle={t(locale, 'chart.wasteSubtitle')}
+        data={chartData}
+        beforeLabel={t(locale, 'chart.before')}
+        afterLabel={t(locale, 'chart.after')}
+        client:visible
+      />
+    </Container>
+  </section>
 
   <NearshoreSection locale={locale} />
 
