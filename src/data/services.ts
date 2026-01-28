@@ -1,3 +1,6 @@
+import type { Locale } from '../i18n/config';
+import { t } from '../i18n/utils';
+
 export interface Service {
   slug: string;
   title: string;
@@ -147,3 +150,32 @@ export const services: Service[] = [
     sectors: ['electronics', 'automotive'],
   },
 ];
+
+export function getServices(locale: Locale): Service[] {
+  const keys = [
+    { slug: 'smart-labeling', key: 'smartLabeling', icon: 'rfid', badge: '$47.72B Market', sectors: ['medical', 'electronics', 'automotive'] },
+    { slug: 'medical-packaging', key: 'medicalPkg', icon: 'medical', badge: 'ISO 13485', sectors: ['medical'] },
+    { slug: 'cold-chain', key: 'coldChain', icon: 'coldchain', badge: 'Temp-Safe', sectors: ['medical', 'electronics'] },
+    { slug: 'sustainability', key: 'sustainability', icon: 'sustainability', badge: '30% Waste Reduction', sectors: ['medical', 'electronics', 'automotive'] },
+    { slug: 'export-crating', key: 'exportCrating', icon: 'crating', badge: 'USMCA', sectors: ['automotive', 'electronics'] },
+    { slug: 'cad-optimization', key: 'cadOpt', icon: 'cad', badge: '20% Smaller', sectors: ['electronics', 'automotive'] },
+    { slug: 'recycled-resins', key: 'recycledResins', icon: 'recycled', badge: 'APR-PCR-101', sectors: ['medical', 'electronics', 'automotive'] },
+    { slug: 'automated-kitting', key: 'automatedKitting', icon: 'automation', badge: 'Industry 4.0', sectors: ['electronics', 'automotive'] },
+  ];
+
+  return keys.map(({ slug, key, icon, badge, sectors }) => ({
+    slug,
+    title: t(locale, `svc.${key}.title`),
+    shortDescription: t(locale, `svc.${key}.short`),
+    fullDescription: t(locale, `svc.${key}.full`),
+    icon,
+    features: [
+      t(locale, `svc.${key}.f1`),
+      t(locale, `svc.${key}.f2`),
+      t(locale, `svc.${key}.f3`),
+      t(locale, `svc.${key}.f4`),
+    ],
+    badge,
+    sectors,
+  }));
+}

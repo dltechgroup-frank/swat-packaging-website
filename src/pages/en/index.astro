@@ -1,18 +1,18 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/sections/Hero.astro';
-import VeritivBadge from '../components/shared/VeritivBadge.astro';
-import TrustBar from '../components/sections/TrustBar.astro';
-import ServiceGrid from '../components/sections/ServiceGrid.astro';
-import NearshoreSection from '../components/sections/NearshoreSection.astro';
-import SectorShowcase from '../components/sections/SectorShowcase.astro';
-import CtaBanner from '../components/sections/CtaBanner.astro';
-import Container from '../components/ui/Container.astro';
-import type { Locale } from '../i18n/config';
-import { t, localizeHref } from '../i18n/utils';
-import { getTrustStats } from '../data/stats';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import VeritivBadge from '../../components/shared/VeritivBadge.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceGrid from '../../components/sections/ServiceGrid.astro';
+import NearshoreSection from '../../components/sections/NearshoreSection.astro';
+import SectorShowcase from '../../components/sections/SectorShowcase.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import Container from '../../components/ui/Container.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+import { getTrustStats } from '../../data/stats';
 
-const locale: Locale = 'es';
+const locale: Locale = 'en';
 const trustStats = getTrustStats(locale);
 ---
 
@@ -24,7 +24,6 @@ const trustStats = getTrustStats(locale);
     secondaryCta={{ text: t(locale, 'home.heroSecondaryCta'), href: localizeHref(locale, '/services') }}
   />
 
-  <!-- Trust Badge + Stats -->
   <section class="py-10 bg-white">
     <Container>
       <div class="flex justify-center mb-8">

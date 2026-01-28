@@ -1,6 +1,21 @@
 ---
-import { navItems } from '../../data/navigation';
 import { siteConfig } from '../../data/siteConfig';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+
+const navItems = [
+  { label: t(locale, 'nav.home'), href: localizeHref(locale, '/') },
+  { label: t(locale, 'nav.about'), href: localizeHref(locale, '/about') },
+  { label: t(locale, 'nav.services'), href: localizeHref(locale, '/services') },
+  { label: t(locale, 'nav.compliance'), href: localizeHref(locale, '/compliance') },
+  { label: t(locale, 'nav.audit'), href: localizeHref(locale, '/audit') },
+];
 ---
 
 <footer class="bg-veritiv-900 text-white">
@@ -14,19 +29,17 @@ import { siteConfig } from '../../data/siteConfig';
           class="h-12 w-auto brightness-0 invert mb-4"
         />
         <p class="text-veritiv-300 text-sm leading-relaxed max-w-md mb-6">
-          Cross-border industrial packaging solutions engineered for the CaliBaja
-          MegaRegion. 30+ years of expertise serving Medical Device, Electronics,
-          and Automotive manufacturers.
+          {t(locale, 'footer.description')}
         </p>
         <p class="text-accent-400 text-xs font-medium uppercase tracking-wider">
-          A Division of Veritiv Landsberg
+          {t(locale, 'common.veritivBadge')}
         </p>
       </div>
 
       <!-- Navigation -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-veritiv-300 mb-4">
-          Navigation
+          {t(locale, 'footer.navHeading')}
         </h3>
         <ul class="space-y-3">
           {navItems.map((item) => (
@@ -45,7 +58,7 @@ import { siteConfig } from '../../data/siteConfig';
       <!-- Contact -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-veritiv-300 mb-4">
-          Contact
+          {t(locale, 'footer.contactHeading')}
         </h3>
         <ul class="space-y-3 text-sm text-veritiv-200">
           <li>
@@ -54,13 +67,12 @@ import { siteConfig } from '../../data/siteConfig';
             </a>
           </li>
           <li>
-            <a href={`tel:${siteConfig.phone}`} class="hover:text-accent-400 transition-colors duration-200">
-              {siteConfig.phone}
+            <a href="tel:+5216631107814" class="hover:text-accent-400 transition-colors duration-200">
+              +52 (663) 110-7814
             </a>
           </li>
           <li class="pt-2 text-veritiv-400">
-            Tijuana, B.C., Mexico<br />
-            San Diego, CA, USA
+            <Fragment set:html={t(locale, 'footer.location').replace('\n', '<br />')} />
           </li>
         </ul>
       </div>
@@ -69,10 +81,10 @@ import { siteConfig } from '../../data/siteConfig';
     <!-- Bottom bar -->
     <div class="mt-12 pt-8 border-t border-veritiv-800 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-xs text-veritiv-400">
-        &copy; {new Date().getFullYear()} SWAT Packaging Team. All rights reserved.
+        &copy; {new Date().getFullYear()} {t(locale, 'footer.copyright')}
       </p>
       <p class="text-xs text-veritiv-500">
-        Veritiv Landsberg &middot; Packaging Solutions
+        {t(locale, 'footer.veritiv')}
       </p>
     </div>
   </div>

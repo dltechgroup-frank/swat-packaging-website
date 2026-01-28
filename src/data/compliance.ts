@@ -1,3 +1,6 @@
+import type { Locale } from '../i18n/config';
+import { t } from '../i18n/utils';
+
 export interface ComplianceTopic {
   title: string;
   description: string;
@@ -35,3 +38,32 @@ export const complianceTopics: ComplianceTopic[] = [
     stat: '90%+ PCR',
   },
 ];
+
+export function getComplianceTopics(locale: Locale): ComplianceTopic[] {
+  return [
+    {
+      title: t(locale, 'complianceData.usmcaTitle'),
+      description: t(locale, 'complianceData.usmcaDesc'),
+      icon: 'document',
+      stat: t(locale, 'complianceData.usmcaStat'),
+    },
+    {
+      title: t(locale, 'complianceData.rvcTitle'),
+      description: t(locale, 'complianceData.rvcDesc'),
+      icon: 'calculator',
+      stat: t(locale, 'complianceData.rvcStat'),
+    },
+    {
+      title: t(locale, 'complianceData.eprTitle'),
+      description: t(locale, 'complianceData.eprDesc'),
+      icon: 'recycle',
+      stat: t(locale, 'complianceData.eprStat'),
+    },
+    {
+      title: t(locale, 'complianceData.aprTitle'),
+      description: t(locale, 'complianceData.aprDesc'),
+      icon: 'certificate',
+      stat: t(locale, 'complianceData.aprStat'),
+    },
+  ];
+}

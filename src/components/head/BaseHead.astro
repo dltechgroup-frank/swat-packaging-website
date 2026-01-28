@@ -1,23 +1,33 @@
 ---
 import { siteConfig } from '../../data/siteConfig';
+import { defaultLocale, type Locale } from '../../i18n/config';
+import { localizeHref } from '../../i18n/utils';
 
 interface Props {
   title: string;
   description?: string;
   image?: string;
   canonicalURL?: string;
+  locale?: Locale;
 }
 
 const {
   title,
   description = siteConfig.description,
   image = siteConfig.ogImage,
+  locale = defaultLocale,
   canonicalURL = new URL(Astro.url.pathname, siteConfig.url).href,
 } = Astro.props;
 
-const fullTitle = title === 'Home'
+const isHome = title === 'Home' || title === 'Inicio';
+const fullTitle = isHome
   ? `${siteConfig.name} | ${siteConfig.tagline}`
   : `${title} | ${siteConfig.name}`;
+
+// Build hreflang URLs from the current path
+const pathWithoutLocale = Astro.url.pathname.replace(/^\/en/, '') || '/';
+const esUrl = new URL(pathWithoutLocale, siteConfig.url).href;
+const enUrl = new URL(`/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`, siteConfig.url).href;
 ---
 
 <meta charset="utf-8" />
@@ -29,6 +39,11 @@ const fullTitle = title === 'Home'
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
 
+<!-- hreflang -->
+<link rel="alternate" hreflang="es" href={esUrl} />
+<link rel="alternate" hreflang="en" href={enUrl} />
+<link rel="alternate" hreflang="x-default" href={esUrl} />
+
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -39,6 +54,7 @@ const fullTitle = title === 'Home'
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, siteConfig.url).href} />
 <meta property="og:site_name" content={siteConfig.name} />
+<meta property="og:locale" content={locale === 'es' ? 'es_MX' : 'en_US'} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

@@ -1,0 +1,44 @@
+---
+import type { Locale } from '../../i18n/config';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+
+// Build the alternate path
+const pathWithoutLocale = currentPath.replace(/^\/en/, '') || '/';
+const esHref = pathWithoutLocale;
+const enHref = `/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+---
+
+<div class="flex items-center rounded-full border border-veritiv-200 overflow-hidden text-xs font-medium">
+  <a
+    href={esHref}
+    class:list={[
+      'px-2.5 py-1 transition-colors duration-200',
+      locale === 'es'
+        ? 'bg-veritiv-900 text-white'
+        : 'text-veritiv-500 hover:text-veritiv-900 hover:bg-veritiv-50',
+    ]}
+    aria-label="Español"
+    aria-current={locale === 'es' ? 'true' : undefined}
+  >
+    ES
+  </a>
+  <a
+    href={enHref}
+    class:list={[
+      'px-2.5 py-1 transition-colors duration-200',
+      locale === 'en'
+        ? 'bg-veritiv-900 text-white'
+        : 'text-veritiv-500 hover:text-veritiv-900 hover:bg-veritiv-50',
+    ]}
+    aria-label="English"
+    aria-current={locale === 'en' ? 'true' : undefined}
+  >
+    EN
+  </a>
+</div>

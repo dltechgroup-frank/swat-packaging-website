@@ -1,20 +1,31 @@
 ---
 import NavLink from './NavLink.astro';
 import MobileMenu from './MobileMenu.astro';
-import { navItems } from '../../data/navigation';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
 
 interface Props {
   currentPath: string;
+  locale?: Locale;
 }
 
-const { currentPath } = Astro.props;
+const { currentPath, locale = 'es' } = Astro.props;
+
+const navItems = [
+  { label: t(locale, 'nav.home'), href: localizeHref(locale, '/') },
+  { label: t(locale, 'nav.about'), href: localizeHref(locale, '/about') },
+  { label: t(locale, 'nav.services'), href: localizeHref(locale, '/services') },
+  { label: t(locale, 'nav.compliance'), href: localizeHref(locale, '/compliance') },
+  { label: t(locale, 'nav.audit'), href: localizeHref(locale, '/audit') },
+];
 ---
 
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-veritiv-100">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
-      <a href="/" class="flex-shrink-0">
+      <a href={localizeHref(locale, '/')} class="flex-shrink-0">
         <img
           src="/images/swat-logo.png"
           alt="SWAT Packaging Team"
@@ -33,13 +44,14 @@ const { currentPath } = Astro.props;
         ))}
       </nav>
 
-      <!-- Desktop CTA -->
+      <!-- Desktop CTA + Language Switcher -->
       <div class="hidden lg:flex items-center gap-4">
+        <LanguageSwitcher locale={locale} currentPath={currentPath} />
         <a
-          href="/audit"
+          href={localizeHref(locale, '/audit')}
           class="inline-flex items-center px-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-lg transition-colors duration-200"
         >
-          Get Your Audit
+          {t(locale, 'nav.cta')}
         </a>
       </div>
 
@@ -59,4 +71,4 @@ const { currentPath } = Astro.props;
   </div>
 </header>
 
-<MobileMenu items={navItems} currentPath={currentPath} />
+<MobileMenu items={navItems} currentPath={currentPath} locale={locale} />

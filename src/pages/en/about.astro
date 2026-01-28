@@ -1,16 +1,16 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/sections/Hero.astro';
-import Container from '../components/ui/Container.astro';
-import VeritivBadge from '../components/shared/VeritivBadge.astro';
-import Timeline from '../components/sections/Timeline.astro';
-import RegionMap from '../components/sections/RegionMap.astro';
-import TrustBar from '../components/sections/TrustBar.astro';
-import CtaBanner from '../components/sections/CtaBanner.astro';
-import type { Locale } from '../i18n/config';
-import { t, localizeHref } from '../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Container from '../../components/ui/Container.astro';
+import VeritivBadge from '../../components/shared/VeritivBadge.astro';
+import Timeline from '../../components/sections/Timeline.astro';
+import RegionMap from '../../components/sections/RegionMap.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
 
-const locale: Locale = 'es';
+const locale: Locale = 'en';
 
 const aboutStats = [
   { value: t(locale, 'about.stat1Value'), suffix: t(locale, 'about.stat1Suffix'), label: t(locale, 'about.stat1Label') },
@@ -31,7 +31,6 @@ const aboutStats = [
     compact
   />
 
-  <!-- Heritage intro -->
   <section class="py-20 lg:py-28 bg-white">
     <Container>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">

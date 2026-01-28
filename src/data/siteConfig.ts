@@ -6,5 +6,5 @@ export const siteConfig = {
   url: 'https://swatpackaging.com',
   ogImage: '/images/og-default.jpg',
   email: 'info@swatpackaging.com',
-  phone: '+1 (619) 555-0100',
+  phone: '+52 (663) 110-7814',
 } as const;

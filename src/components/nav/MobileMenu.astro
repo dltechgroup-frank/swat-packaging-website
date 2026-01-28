@@ -1,12 +1,20 @@
 ---
-import type { NavItem } from '../../data/navigation';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
 
 interface Props {
   items: NavItem[];
   currentPath: string;
+  locale?: Locale;
 }
 
-const { items, currentPath } = Astro.props;
+const { items, currentPath, locale = 'es' } = Astro.props;
 ---
 
 <div
@@ -16,15 +24,18 @@ const { items, currentPath } = Astro.props;
 >
   <div class="flex items-center justify-between p-6">
     <img src="/images/swat-logo.png" alt="SWAT Packaging" class="h-8 brightness-0 invert" />
-    <button
-      id="close-menu"
-      class="text-white p-2 -mr-2"
-      aria-label="Close menu"
-    >
-      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
+    <div class="flex items-center gap-3">
+      <LanguageSwitcher locale={locale} currentPath={currentPath} />
+      <button
+        id="close-menu"
+        class="text-white p-2 -mr-2"
+        aria-label="Close menu"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </div>
 
   <nav class="flex flex-col items-start gap-2 px-6 pt-8">
@@ -45,10 +56,10 @@ const { items, currentPath } = Astro.props;
 
   <div class="absolute bottom-12 left-6 right-6">
     <a
-      href="/audit"
+      href={localizeHref(locale, '/audit')}
       class="block w-full text-center bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 rounded-lg transition-colors duration-200"
     >
-      Request Your Free Audit
+      {t(locale, 'nav.mobileCta')}
     </a>
   </div>
 </div>
