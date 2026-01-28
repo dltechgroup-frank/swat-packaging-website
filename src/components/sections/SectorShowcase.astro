@@ -14,17 +14,17 @@ const sectors = [
   {
     title: t(locale, 'sectors.medicalTitle'),
     description: t(locale, 'sectors.medicalDesc'),
-    gradient: 'from-veritiv-900 to-veritiv-700',
+    image: 'https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?auto=format&fit=crop&w=800&q=80',
   },
   {
     title: t(locale, 'sectors.electronicsTitle'),
     description: t(locale, 'sectors.electronicsDesc'),
-    gradient: 'from-veritiv-800 to-veritiv-600',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
   },
   {
     title: t(locale, 'sectors.automotiveTitle'),
     description: t(locale, 'sectors.automotiveDesc'),
-    gradient: 'from-accent-700 to-accent-500',
+    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80',
   },
 ];
 ---
@@ -40,13 +40,19 @@ const sectors = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {sectors.map((sector) => (
         <div
-          class={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${sector.gradient} p-8 lg:p-10 min-h-[280px] flex flex-col justify-end group`}
+          class="relative overflow-hidden rounded-2xl min-h-[280px] flex flex-col justify-end group"
           data-animate
         >
-          <!-- Subtle pattern -->
-          <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Ccircle cx=&quot;1&quot; cy=&quot;1&quot; r=&quot;1&quot;/%3E%3C/g%3E%3C/svg%3E');"></div>
+          <!-- Background image -->
+          <img
+            src={sector.image}
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <!-- Dark overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-veritiv-900/90 via-veritiv-900/50 to-veritiv-900/30"></div>
 
-          <div class="relative z-10">
+          <div class="relative z-10 p-8 lg:p-10">
             <h3 class="text-2xl font-bold text-white mb-3">{sector.title}</h3>
             <p class="text-veritiv-100 text-sm leading-relaxed">{sector.description}</p>
           </div>

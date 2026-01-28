@@ -8,6 +8,7 @@ interface Props {
   cta?: { text: string; href: string };
   secondaryCta?: { text: string; href: string };
   compact?: boolean;
+  image?: string;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   cta,
   secondaryCta,
   compact = false,
+  image,
 } = Astro.props;
 ---
 
@@ -25,6 +27,12 @@ const {
     compact ? 'py-20 lg:py-28' : 'py-24 lg:py-36',
   ]}
 >
+  {image && (
+    <div class="absolute inset-0">
+      <img src={image} alt="" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-veritiv-900/70"></div>
+    </div>
+  )}
   <Container class="relative z-10">
     <div class:list={['max-w-3xl', !compact && 'lg:max-w-4xl']}>
       <h1
