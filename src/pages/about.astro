@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Container from '../components/ui/Container.astro';
+import VeritivBadge from '../components/shared/VeritivBadge.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import RegionMap from '../components/sections/RegionMap.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+const aboutStats = [
+  { value: '30', suffix: '+', label: 'Years on the Ground' },
+  { value: '2', label: 'Cross-Border Facilities' },
+  { value: '500', suffix: '+', label: 'Active Client Projects' },
+  { value: '24', suffix: 'hr', label: 'Emergency Response' },
+];
+---
+
+<BaseLayout
+  title="About"
+  description="30 years of binational engineering excellence in the CaliBaja MegaRegion. SWAT Packaging operates across the Tijuana-San Diego corridor as a division of Veritiv Landsberg."
+>
+  <Hero
+    title="Binational Engineering Excellence"
+    subtitle="30 years of industrial packaging heritage in the CaliBaja MegaRegion. From simple assembly to advanced R&D — we've evolved with the corridor."
+    compact
+  />
+
+  <!-- Heritage intro -->
+  <section class="py-20 lg:py-28 bg-white">
+    <Container>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div data-animate>
+          <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
+            Our Story
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-veritiv-900 tracking-tight">
+            Built for the Border
+          </h2>
+          <div class="mt-6 space-y-4 text-body-muted leading-relaxed">
+            <p>
+              When we started in 1995, Tijuana's maquiladora industry needed a packaging partner who understood both sides of the border. Not a supplier shipping in from hundreds of miles away — but an engineering team embedded in the same industrial parks as the production lines.
+            </p>
+            <p>
+              Three decades later, that same principle drives everything we do. We've grown from corrugated basics to ISO 13485-certified medical device packaging, RFID-enabled smart labeling, and AI-driven automated kitting. But our advantage hasn't changed: <strong class="text-veritiv-900">we're here, on the ground, where the work happens.</strong>
+            </p>
+            <p>
+              In 2024, the acquisition of Orora Packaging Solutions by Veritiv brought global distribution scale to our local expertise. As the SWAT Packaging Team, we now combine Veritiv's Fortune 500 resources with the agility and deep regional knowledge that only 30 years in the CaliBaja corridor can provide.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-6" data-animate>
+          <div class="bg-gradient-to-br from-veritiv-900 to-veritiv-700 rounded-2xl p-8 text-white">
+            <div class="flex justify-center mb-6">
+              <VeritivBadge light />
+            </div>
+            <p class="text-center text-veritiv-200 text-sm leading-relaxed">
+              SWAT Packaging Team operates as a tactical division within Veritiv Landsberg, combining Fortune 500 global supply chain capabilities with 30 years of CaliBaja engineering expertise.
+            </p>
+          </div>
+
+          <div class="bg-surface-light rounded-2xl p-8">
+            <h3 class="font-semibold text-veritiv-900 mb-3">What SWAT Stands For</h3>
+            <p class="text-sm text-body-muted leading-relaxed">
+              Like its namesake, our team deploys as a <strong class="text-veritiv-900">specialized tactical unit</strong> — we handle the complex cross-border packaging challenges that standard procedures can't solve. Speed, precision, and engineering depth are our defining traits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <Timeline />
+
+  <RegionMap />
+
+  <TrustBar stats={aboutStats} />
+
+  <CtaBanner
+    title="See How We Can Help"
+    description="Whether you're nearshoring production to Tijuana or optimizing existing cross-border operations, our team is ready to engineer the right packaging solution."
+    buttonText="Schedule a Consultation"
+    buttonHref="/audit"
+  />
+</BaseLayout>

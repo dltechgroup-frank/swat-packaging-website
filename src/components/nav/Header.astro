@@ -1,0 +1,62 @@
+---
+import NavLink from './NavLink.astro';
+import MobileMenu from './MobileMenu.astro';
+import { navItems } from '../../data/navigation';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-veritiv-100">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0">
+        <img
+          src="/images/swat-logo.png"
+          alt="SWAT Packaging Team"
+          class="h-10 lg:h-12 w-auto"
+        />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8">
+        {navItems.map((item) => (
+          <NavLink
+            href={item.href}
+            label={item.label}
+            isActive={currentPath === item.href}
+          />
+        ))}
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a
+          href="/audit"
+          class="inline-flex items-center px-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-lg transition-colors duration-200"
+        >
+          Get Your Audit
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button
+        id="menu-toggle"
+        class="lg:hidden p-2 -mr-2 text-veritiv-700"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<MobileMenu items={navItems} currentPath={currentPath} />

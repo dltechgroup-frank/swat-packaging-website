@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Container from '../components/ui/Container.astro';
+import AuditForm from '../components/sections/AuditForm.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+
+const auditStats = [
+  { value: '30', suffix: '+', label: 'Years of Expertise' },
+  { value: '360', suffix: '°', label: 'Full-Spectrum Audit' },
+  { value: '48', suffix: 'hr', label: 'Response Time' },
+  { value: '0', prefix: '$', label: 'Cost to Start' },
+];
+---
+
+<BaseLayout
+  title="Audit"
+  description="Request your free 360° Packaging Efficiency Audit. SWAT Packaging identifies unnecessary air, material waste, and compliance gaps in your cross-border packaging."
+>
+  <Hero
+    title="The SWAT Impact Diagnostic"
+    subtitle='A 360-degree packaging efficiency audit that identifies "unnecessary air" in your designs — so you can reduce freight costs, cut material waste, and ensure cross-border compliance.'
+    compact
+  />
+
+  <!-- Value Props -->
+  <section class="py-16 lg:py-20 bg-white">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: 'M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25 4.5-4.5',
+            title: 'Reduce Material Waste',
+            description: 'Our engineers identify oversized packaging, excess void fill, and material redundancies that inflate your per-unit costs.',
+          },
+          {
+            icon: 'M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h17.25',
+            title: 'Optimize Freight Costs',
+            description: 'Right-sized packaging means fewer trucks, lower dimensional weight charges, and 20% average footprint reduction.',
+          },
+          {
+            icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622',
+            title: 'Ensure Compliance',
+            description: 'Every solution is engineered for USMCA rules of origin, EPR requirements, and APR-PCR-101 traceability from day one.',
+          },
+        ].map((item) => (
+          <div class="text-center p-6" data-animate>
+            <div class="w-14 h-14 bg-accent-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d={item.icon} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-veritiv-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-body-muted leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <AuditForm />
+
+  <TrustBar stats={auditStats} />
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const sectors = [
+  {
+    title: 'Medical Device',
+    description:
+      'ISO 13485-compliant sterile barrier packaging for North America\'s largest medical device manufacturing cluster.',
+    gradient: 'from-veritiv-900 to-veritiv-700',
+  },
+  {
+    title: 'Electronics',
+    description:
+      'ESD-safe packaging solutions with smart labeling and asset tracking for high-value electronics assembly.',
+    gradient: 'from-veritiv-800 to-veritiv-600',
+  },
+  {
+    title: 'Automotive',
+    description:
+      'USMCA-compliant export crating and automated kitting solutions for cross-border automotive supply chains.',
+    gradient: 'from-accent-700 to-accent-500',
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-white">
+  <Container>
+    <SectionHeading
+      title="Your Industry, Our Expertise"
+      subtitle="Deep specialization in the three sectors driving Tijuana's industrial growth."
+      tag="Sectors"
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {sectors.map((sector) => (
+        <div
+          class={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${sector.gradient} p-8 lg:p-10 min-h-[280px] flex flex-col justify-end group`}
+          data-animate
+        >
+          <!-- Subtle pattern -->
+          <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Ccircle cx=&quot;1&quot; cy=&quot;1&quot; r=&quot;1&quot;/%3E%3C/g%3E%3C/svg%3E');"></div>
+
+          <div class="relative z-10">
+            <h3 class="text-2xl font-bold text-white mb-3">{sector.title}</h3>
+            <p class="text-veritiv-100 text-sm leading-relaxed">{sector.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

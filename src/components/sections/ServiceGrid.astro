@@ -1,0 +1,28 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import { services } from '../../data/services';
+---
+
+<section class="py-20 lg:py-28 bg-surface-light">
+  <Container>
+    <SectionHeading
+      title="Industrial Packaging Solutions"
+      subtitle="Eight specialized capabilities engineered for the demands of cross-border manufacturing."
+      tag="What We Do"
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+      {services.map((service) => (
+        <Card
+          title={service.title}
+          description={service.shortDescription}
+          icon={service.icon}
+          badge={service.badge}
+          href={`/services#${service.slug}`}
+        />
+      ))}
+    </div>
+  </Container>
+</section>

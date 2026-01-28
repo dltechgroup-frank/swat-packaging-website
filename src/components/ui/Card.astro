@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  href?: string;
+  badge?: string;
+  expanded?: boolean;
+  features?: string[];
+}
+
+const {
+  title,
+  description,
+  icon,
+  href,
+  badge,
+  expanded = false,
+  features = [],
+} = Astro.props;
+
+const Tag = href ? 'a' : 'div';
+---
+
+<div
+  class:list={[
+    'group bg-white rounded-xl border border-veritiv-100 p-6 lg:p-8 transition-all duration-300',
+    href && 'hover:border-accent-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer',
+    !href && 'hover:shadow-md',
+  ]}
+  data-animate
+>
+  {href ? (
+    <a href={href} class="block">
+      <div class="flex items-start gap-4">
+        {icon && (
+          <div class="flex-shrink-0 w-12 h-12 bg-accent-50 rounded-lg flex items-center justify-center text-accent-500 group-hover:bg-accent-100 transition-colors duration-200">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+            </svg>
+          </div>
+        )}
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="text-lg font-semibold text-veritiv-900 group-hover:text-accent-600 transition-colors duration-200">
+              {title}
+            </h3>
+            {badge && (
+              <span class="inline-flex px-2 py-0.5 text-xs font-medium rounded-full bg-accent-50 text-accent-600">
+                {badge}
+              </span>
+            )}
+          </div>
+          <p class="text-sm text-body-muted leading-relaxed">{description}</p>
+        </div>
+      </div>
+    </a>
+  ) : (
+    <Fragment>
+      <div class="flex items-start gap-4">
+        {icon && (
+          <div class="flex-shrink-0 w-12 h-12 bg-accent-50 rounded-lg flex items-center justify-center text-accent-500">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+            </svg>
+          </div>
+        )}
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="text-lg font-semibold text-veritiv-900">{title}</h3>
+            {badge && (
+              <span class="inline-flex px-2 py-0.5 text-xs font-medium rounded-full bg-accent-50 text-accent-600">
+                {badge}
+              </span>
+            )}
+          </div>
+          <p class="text-sm text-body-muted leading-relaxed">{expanded ? description : description}</p>
+        </div>
+      </div>
+      {expanded && features.length > 0 && (
+        <ul class="mt-6 ml-16 space-y-2">
+          {features.map((feature) => (
+            <li class="flex items-start gap-2 text-sm text-body-muted">
+              <svg class="w-4 h-4 mt-0.5 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      )}
+    </Fragment>
+  )}
+</div>

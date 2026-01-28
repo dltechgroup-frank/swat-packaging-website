@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Container from '../components/ui/Container.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import ComplianceCard from '../components/sections/ComplianceCard.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { complianceTopics } from '../data/compliance';
+---
+
+<BaseLayout
+  title="Compliance"
+  description="Navigate USMCA Rules of Origin, Regional Value Content, 2026 EPR laws, and APR-PCR-101 certification. SWAT Packaging bridges engineering and trade law."
+>
+  <Hero
+    title="2026 Strategy & Trade Law"
+    subtitle="Navigating the regulatory landscape so your packaging moves freely across borders. We bridge the gap between engineering precision and trade compliance."
+    compact
+  />
+
+  <!-- Intro -->
+  <section class="py-20 lg:py-28 bg-white">
+    <Container narrow>
+      <div class="text-center" data-animate>
+        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
+          Compliance Leadership
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-veritiv-900 tracking-tight">
+          Your Bridge Between Engineering &amp; Trade Law
+        </h2>
+        <p class="mt-6 text-body-muted leading-relaxed max-w-2xl mx-auto">
+          Cross-border packaging isn't just about materials and design. Every shipment crossing the U.S.-Mexico border faces a web of tariff codes, rules of origin, sustainability mandates, and documentation requirements. A single compliance gap can trigger costly delays, duties, or rejected shipments.
+        </p>
+        <p class="mt-4 text-body-muted leading-relaxed max-w-2xl mx-auto">
+          SWAT Packaging integrates trade compliance directly into the packaging engineering process — so your solutions are built to clear checkpoints, not just protect products.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Compliance Cards -->
+  <section class="py-20 lg:py-28 bg-surface-light">
+    <Container>
+      <SectionHeading
+        title="Four Pillars of Compliance"
+        subtitle="Critical regulatory domains that every cross-border manufacturer must navigate in 2026 and beyond."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {complianceTopics.map((topic) => (
+          <ComplianceCard topic={topic} />
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Deep narrative -->
+  <section class="py-20 lg:py-28 bg-white">
+    <Container narrow>
+      <div class="prose prose-lg max-w-none" data-animate>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">The Tariff Landscape</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              With USMCA in full effect, manufacturers must demonstrate that their packaging materials meet Regional Value Content thresholds. Failure to document RVC properly can expose shipments to Most Favored Nation (MFN) tariff rates — often 5-25% of goods value. SWAT Packaging engineers designs that inherently meet these thresholds and provides the documentation to prove it.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">Sustainability as Strategy</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              Extended Producer Responsibility (EPR) laws are no longer optional. By 2026, manufacturers must demonstrate end-of-life pathways for their packaging materials. APR-PCR-101 certification ensures traceable post-consumer resin content for ESG reporting. SWAT Packaging provides both the materials and the documentation your sustainability team needs.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">Documentation That Travels</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              Every pallet we ship includes comprehensive compliance documentation: certificates of origin, RVC calculations, material safety data sheets, and sustainability certifications. Our packaging doesn't just protect your products — it protects your business from regulatory risk.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">Proactive, Not Reactive</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              Rather than retrofitting compliance after design, we build regulatory requirements into the engineering process from day one. This approach eliminates costly redesigns and ensures every solution ships compliant on the first run.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <CtaBanner
+    title="Ensure Your Packaging Meets 2026 Standards"
+    description="Don't wait for a compliance gap to become a costly problem. Let us audit your packaging against current USMCA, EPR, and sustainability requirements."
+    buttonText="Request a Compliance Review"
+    buttonHref="/audit"
+  />
+</BaseLayout>
