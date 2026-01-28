@@ -1,24 +1,29 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
 import Container from '../ui/Container.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+
 const sectors = [
   {
-    title: 'Medical Device',
-    description:
-      'ISO 13485-compliant sterile barrier packaging for North America\'s largest medical device manufacturing cluster.',
+    title: t(locale, 'sectors.medicalTitle'),
+    description: t(locale, 'sectors.medicalDesc'),
     gradient: 'from-veritiv-900 to-veritiv-700',
   },
   {
-    title: 'Electronics',
-    description:
-      'ESD-safe packaging solutions with smart labeling and asset tracking for high-value electronics assembly.',
+    title: t(locale, 'sectors.electronicsTitle'),
+    description: t(locale, 'sectors.electronicsDesc'),
     gradient: 'from-veritiv-800 to-veritiv-600',
   },
   {
-    title: 'Automotive',
-    description:
-      'USMCA-compliant export crating and automated kitting solutions for cross-border automotive supply chains.',
+    title: t(locale, 'sectors.automotiveTitle'),
+    description: t(locale, 'sectors.automotiveDesc'),
     gradient: 'from-accent-700 to-accent-500',
   },
 ];
@@ -27,9 +32,9 @@ const sectors = [
 <section class="py-20 lg:py-28 bg-white">
   <Container>
     <SectionHeading
-      title="Your Industry, Our Expertise"
-      subtitle="Deep specialization in the three sectors driving Tijuana's industrial growth."
-      tag="Sectors"
+      title={t(locale, 'sectors.title')}
+      subtitle={t(locale, 'sectors.subtitle')}
+      tag={t(locale, 'sectors.tag')}
     />
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">

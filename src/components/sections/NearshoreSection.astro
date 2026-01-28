@@ -1,5 +1,13 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
 import Container from '../ui/Container.astro';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
 ---
 
 <section class="py-20 lg:py-28 bg-veritiv-900 relative overflow-hidden">
@@ -13,23 +21,23 @@ import Container from '../ui/Container.astro';
       <!-- Left: Copy -->
       <div>
         <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-500/20 text-accent-400 mb-6" data-animate>
-          Nearshoring Solutions
+          {t(locale, 'nearshore.badge')}
         </span>
 
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight" data-animate>
-          Your Cross-Border Packaging Partner in the CaliBaja MegaRegion
+          {t(locale, 'nearshore.title')}
         </h2>
 
         <p class="mt-4 text-lg text-accent-300 font-medium" data-animate>
-          Reduce lead times, cut logistics costs, and stay USMCA-compliant — all from the largest binational manufacturing corridor in North America.
+          {t(locale, 'nearshore.subtitle')}
         </p>
 
         <div class="mt-6 space-y-4 text-veritiv-200 leading-relaxed" data-animate>
           <p>
-            Tijuana is now the #1 nearshoring destination for manufacturers moving production closer to U.S. markets. But cross-border packaging introduces complexities that domestic suppliers can't solve — customs documentation, Regional Value Content thresholds, and supply chains that span two regulatory environments.
+            {t(locale, 'nearshore.body1')}
           </p>
           <p>
-            SWAT Packaging operates on both sides of the border with 30 years of engineering expertise in the Tijuana-San Diego corridor. We design, test, and deliver packaging solutions that move seamlessly through USMCA checkpoints — so your products reach market faster, with zero compliance delays.
+            {t(locale, 'nearshore.body2')}
           </p>
         </div>
 
@@ -37,30 +45,30 @@ import Container from '../ui/Container.astro';
         <div class="mt-10 grid grid-cols-3 gap-6" data-animate>
           <div>
             <div class="text-3xl font-bold text-white">48<span class="text-accent-400">hr</span></div>
-            <p class="mt-1 text-xs text-veritiv-400">Prototype turnaround from our Tijuana facility</p>
+            <p class="mt-1 text-xs text-veritiv-400">{t(locale, 'nearshore.stat1Label')}</p>
           </div>
           <div>
             <div class="text-3xl font-bold text-white">100<span class="text-accent-400">%</span></div>
-            <p class="mt-1 text-xs text-veritiv-400">USMCA-compliant export crating</p>
+            <p class="mt-1 text-xs text-veritiv-400">{t(locale, 'nearshore.stat2Label')}</p>
           </div>
           <div>
-            <div class="text-3xl font-bold text-white">2 <span class="text-accent-400">Nations</span></div>
-            <p class="mt-1 text-xs text-veritiv-400">Integrated supply chain across the border</p>
+            <div class="text-3xl font-bold text-white">2 <span class="text-accent-400">{t(locale, 'nearshore.stat3Value')}</span></div>
+            <p class="mt-1 text-xs text-veritiv-400">{t(locale, 'nearshore.stat3Label')}</p>
           </div>
         </div>
 
         <p class="mt-8 text-xs text-veritiv-500" data-animate>
-          Serving Medical Device, Electronics, and Automotive manufacturers in Parque Industrial Pacifico, HubsPark Tech Campus, and across Tijuana's industrial zones.
+          {t(locale, 'nearshore.sectorCallout')}
         </p>
       </div>
 
       <!-- Right: Lead Capture Form -->
       <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-10" data-animate>
         <h3 class="text-xl font-bold text-veritiv-900 mb-2">
-          Get a Nearshoring Packaging Assessment
+          {t(locale, 'nearshore.formTitle')}
         </h3>
         <p class="text-sm text-body-muted mb-8">
-          Tell us about your cross-border volume and we'll deliver a custom packaging strategy within 48 hours.
+          {t(locale, 'nearshore.formSubtext')}
         </p>
 
         <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
@@ -71,92 +79,92 @@ import Container from '../ui/Container.astro';
           <input type="checkbox" name="botcheck" class="hidden" />
 
           <div>
-            <label for="ns-name" class="block text-sm font-medium text-veritiv-700 mb-1">Full Name *</label>
+            <label for="ns-name" class="block text-sm font-medium text-veritiv-700 mb-1">{t(locale, 'nearshore.labelName')}</label>
             <input
               type="text"
               id="ns-name"
               name="name"
               required
-              placeholder="Your full name"
+              placeholder={t(locale, 'nearshore.placeholderName')}
               class="w-full px-4 py-3 rounded-lg border border-veritiv-200 text-sm text-veritiv-900 placeholder:text-veritiv-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition"
             />
           </div>
 
           <div>
-            <label for="ns-company" class="block text-sm font-medium text-veritiv-700 mb-1">Company *</label>
+            <label for="ns-company" class="block text-sm font-medium text-veritiv-700 mb-1">{t(locale, 'nearshore.labelCompany')}</label>
             <input
               type="text"
               id="ns-company"
               name="company"
               required
-              placeholder="Company name"
+              placeholder={t(locale, 'nearshore.placeholderCompany')}
               class="w-full px-4 py-3 rounded-lg border border-veritiv-200 text-sm text-veritiv-900 placeholder:text-veritiv-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition"
             />
           </div>
 
           <div>
-            <label for="ns-email" class="block text-sm font-medium text-veritiv-700 mb-1">Work Email *</label>
+            <label for="ns-email" class="block text-sm font-medium text-veritiv-700 mb-1">{t(locale, 'nearshore.labelEmail')}</label>
             <input
               type="email"
               id="ns-email"
               name="email"
               required
-              placeholder="Work email"
+              placeholder={t(locale, 'nearshore.placeholderEmail')}
               class="w-full px-4 py-3 rounded-lg border border-veritiv-200 text-sm text-veritiv-900 placeholder:text-veritiv-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition"
             />
           </div>
 
           <div>
-            <label for="ns-phone" class="block text-sm font-medium text-veritiv-700 mb-1">Phone</label>
+            <label for="ns-phone" class="block text-sm font-medium text-veritiv-700 mb-1">{t(locale, 'nearshore.labelPhone')}</label>
             <input
               type="tel"
               id="ns-phone"
               name="phone"
-              placeholder="+1 (___) ___-____"
+              placeholder={t(locale, 'nearshore.placeholderPhone')}
               class="w-full px-4 py-3 rounded-lg border border-veritiv-200 text-sm text-veritiv-900 placeholder:text-veritiv-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition"
             />
           </div>
 
           <div>
-            <label for="ns-sector" class="block text-sm font-medium text-veritiv-700 mb-1">Industry Sector *</label>
+            <label for="ns-sector" class="block text-sm font-medium text-veritiv-700 mb-1">{t(locale, 'nearshore.labelSector')}</label>
             <select
               id="ns-sector"
               name="sector"
               required
               class="w-full px-4 py-3 rounded-lg border border-veritiv-200 text-sm text-veritiv-900 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition bg-white"
             >
-              <option value="" disabled selected>Select your sector</option>
-              <option value="Medical Device">Medical Device</option>
-              <option value="Electronics">Electronics</option>
-              <option value="Automotive">Automotive</option>
-              <option value="Other">Other</option>
+              <option value="" disabled selected>{t(locale, 'nearshore.selectSector')}</option>
+              <option value="Medical Device">{t(locale, 'nearshore.optionMedical')}</option>
+              <option value="Electronics">{t(locale, 'nearshore.optionElectronics')}</option>
+              <option value="Automotive">{t(locale, 'nearshore.optionAutomotive')}</option>
+              <option value="Other">{t(locale, 'nearshore.optionOther')}</option>
             </select>
           </div>
 
           <div>
-            <label for="ns-volume" class="block text-sm font-medium text-veritiv-700 mb-1">Estimated Monthly Volume *</label>
+            <label for="ns-volume" class="block text-sm font-medium text-veritiv-700 mb-1">{t(locale, 'nearshore.labelVolume')}</label>
             <select
               id="ns-volume"
               name="monthly_volume"
               required
               class="w-full px-4 py-3 rounded-lg border border-veritiv-200 text-sm text-veritiv-900 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition bg-white"
             >
-              <option value="" disabled selected>Select volume range</option>
-              <option value="Under 1,000 units">Under 1,000 units</option>
-              <option value="1,000 - 10,000 units">1,000 - 10,000 units</option>
-              <option value="10,000 - 50,000 units">10,000 - 50,000 units</option>
-              <option value="50,000 - 100,000 units">50,000 - 100,000 units</option>
-              <option value="100,000+ units">100,000+ units</option>
+              <option value="" disabled selected>{t(locale, 'nearshore.selectVolume')}</option>
+              <option value="Under 1,000 units">{t(locale, 'nearshore.optionVolume1')}</option>
+              <option value="1,000 - 10,000 units">{t(locale, 'nearshore.optionVolume2')}</option>
+              <option value="10,000 - 50,000 units">{t(locale, 'nearshore.optionVolume3')}</option>
+              <option value="50,000 - 100,000 units">{t(locale, 'nearshore.optionVolume4')}</option>
+              <option value="100,000+ units">{t(locale, 'nearshore.optionVolume5')}</option>
             </select>
           </div>
 
           <div>
-            <label for="ns-challenge" class="block text-sm font-medium text-veritiv-700 mb-1">Current Packaging Challenge</label>
+            <label for="ns-challenge" class="block text-sm font-medium text-veritiv-700 mb-1">{t(locale, 'nearshore.labelChallenge')}</label>
             <textarea
               id="ns-challenge"
               name="challenge"
               rows="3"
-              placeholder="Briefly describe your packaging needs or pain points..."
+              placeholder={t(locale, 'nearshore.placeholderChallenge')}
               class="w-full px-4 py-3 rounded-lg border border-veritiv-200 text-sm text-veritiv-900 placeholder:text-veritiv-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition resize-none"
             ></textarea>
           </div>
@@ -167,11 +175,11 @@ import Container from '../ui/Container.astro';
             type="submit"
             class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 rounded-lg transition-colors duration-200 text-sm focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
           >
-            Request My Assessment
+            {t(locale, 'nearshore.submitButton')}
           </button>
 
           <p class="text-xs text-center text-body-muted">
-            We respond to all nearshoring inquiries within one business day.
+            {t(locale, 'nearshore.submitNote')}
           </p>
         </form>
       </div>

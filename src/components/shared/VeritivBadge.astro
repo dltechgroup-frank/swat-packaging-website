@@ -1,9 +1,13 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+
 interface Props {
   light?: boolean;
+  locale?: Locale;
 }
 
-const { light = false } = Astro.props;
+const { light = false, locale = 'es' } = Astro.props;
 ---
 
 <div class="flex items-center gap-2" data-animate>
@@ -19,7 +23,7 @@ const { light = false } = Astro.props;
       light ? 'text-accent-400' : 'text-accent-500',
     ]}
   >
-    A Division of Veritiv Landsberg
+    {t(locale, 'common.veritivBadge')}
   </span>
   <div
     class:list={[

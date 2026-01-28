@@ -1,36 +1,44 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
 import Container from '../ui/Container.astro';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
 
 const milestones = [
   {
-    year: '1995',
-    title: 'Founded in the CaliBaja Region',
-    description: 'Established packaging operations in the Tijuana-San Diego corridor to serve the emerging maquiladora industry.',
+    year: t(locale, 'timeline.m1Year'),
+    title: t(locale, 'timeline.m1Title'),
+    description: t(locale, 'timeline.m1Desc'),
   },
   {
-    year: '2005',
-    title: 'Advanced Engineering Division',
-    description: 'Transitioned from basic assembly to full packaging engineering with CAD design and thermal testing capabilities.',
+    year: t(locale, 'timeline.m2Year'),
+    title: t(locale, 'timeline.m2Title'),
+    description: t(locale, 'timeline.m2Desc'),
   },
   {
-    year: '2015',
-    title: 'ISO 13485 Certification',
-    description: 'Achieved medical device packaging certification, opening doors to Tijuana\'s growing biomedical cluster.',
+    year: t(locale, 'timeline.m3Year'),
+    title: t(locale, 'timeline.m3Title'),
+    description: t(locale, 'timeline.m3Desc'),
   },
   {
-    year: '2020',
-    title: 'Industry 4.0 Integration',
-    description: 'Deployed AI-driven automation and RFID smart labeling systems across our production facilities.',
+    year: t(locale, 'timeline.m4Year'),
+    title: t(locale, 'timeline.m4Title'),
+    description: t(locale, 'timeline.m4Desc'),
   },
   {
-    year: '2024',
-    title: 'Veritiv Acquisition',
-    description: 'Joined the Veritiv family through the Orora Packaging Solutions acquisition, combining local agility with global scale.',
+    year: t(locale, 'timeline.m5Year'),
+    title: t(locale, 'timeline.m5Title'),
+    description: t(locale, 'timeline.m5Desc'),
   },
   {
-    year: '2026',
-    title: 'SWAT Packaging Team',
-    description: 'Rebranded as the SWAT Packaging Team — an agile, high-impact tactical unit for cross-border packaging challenges.',
+    year: t(locale, 'timeline.m6Year'),
+    title: t(locale, 'timeline.m6Title'),
+    description: t(locale, 'timeline.m6Desc'),
   },
 ];
 ---
@@ -39,10 +47,10 @@ const milestones = [
   <Container>
     <div class="text-center mb-16" data-animate>
       <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
-        Our Heritage
+        {t(locale, 'timeline.tag')}
       </span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-veritiv-900 tracking-tight">
-        30 Years of Industrial Evolution
+        {t(locale, 'timeline.title')}
       </h2>
     </div>
 

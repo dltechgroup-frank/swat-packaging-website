@@ -1,5 +1,13 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
 import Container from '../ui/Container.astro';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
 ---
 
 <section class="py-20 lg:py-28 bg-white">
@@ -14,32 +22,32 @@ import Container from '../ui/Container.astro';
             <div class="bg-veritiv-200 rounded-t-3xl p-6 pb-0">
               <div class="flex items-center gap-2 mb-3">
                 <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
-                <span class="text-xs font-semibold text-veritiv-700 uppercase tracking-wider">San Diego, CA</span>
+                <span class="text-xs font-semibold text-veritiv-700 uppercase tracking-wider">{t(locale, 'regionMap.sanDiegoLabel')}</span>
               </div>
-              <div class="text-xs text-veritiv-500">United States</div>
+              <div class="text-xs text-veritiv-500">{t(locale, 'regionMap.unitedStates')}</div>
             </div>
 
             <!-- Border line -->
             <div class="h-1 bg-accent-500 relative">
               <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-500 text-white text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">
-                U.S. - MEXICO BORDER
+                {t(locale, 'regionMap.borderLabel')}
               </div>
             </div>
 
             <!-- Mexico side -->
             <div class="bg-veritiv-100 rounded-b-3xl p-6 pt-6 space-y-3">
-              <div class="text-xs text-veritiv-500 mb-2">Mexico</div>
+              <div class="text-xs text-veritiv-500 mb-2">{t(locale, 'regionMap.mexico')}</div>
               <div class="flex items-center gap-2">
                 <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
-                <span class="text-xs font-semibold text-veritiv-700">Parque Industrial Pacifico</span>
+                <span class="text-xs font-semibold text-veritiv-700">{t(locale, 'regionMap.pip')}</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-2 h-2 bg-accent-400 rounded-full"></div>
-                <span class="text-xs font-semibold text-veritiv-700">HubsPark Tech Campus</span>
+                <span class="text-xs font-semibold text-veritiv-700">{t(locale, 'regionMap.hubspark')}</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-2 h-2 bg-veritiv-400 rounded-full"></div>
-                <span class="text-xs font-medium text-veritiv-500">Eastern Growth Corridors</span>
+                <span class="text-xs font-medium text-veritiv-500">{t(locale, 'regionMap.eastern')}</span>
               </div>
             </div>
           </div>
@@ -49,28 +57,32 @@ import Container from '../ui/Container.astro';
       <!-- Content -->
       <div data-animate>
         <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
-          Strategic Location
+          {t(locale, 'regionMap.tag')}
         </span>
         <h2 class="text-3xl sm:text-4xl font-bold text-veritiv-900 tracking-tight">
-          The CaliBaja Bi-National MegaRegion
+          {t(locale, 'regionMap.title')}
         </h2>
         <div class="mt-6 space-y-4 text-body-muted leading-relaxed">
           <p>
-            Situated at the nexus of the world's busiest border crossing, SWAT Packaging maintains strategic positions in Tijuana's premier industrial zones. Our proximity to both manufacturing clusters and distribution networks means faster turnaround and lower logistics costs.
+            {t(locale, 'regionMap.body1')}
           </p>
           <p>
-            From <strong class="text-veritiv-900">Parque Industrial Pacifico</strong> to the Industry 4.0-focused <strong class="text-veritiv-900">HubsPark Tech Campus</strong>, we operate where your production lines are — not hours away in a distant warehouse.
+            {t(locale, 'regionMap.body2Start')}
+            <strong class="text-veritiv-900">{t(locale, 'regionMap.body2PIP')}</strong>
+            {t(locale, 'regionMap.body2Mid')}
+            <strong class="text-veritiv-900">{t(locale, 'regionMap.body2HP')}</strong>
+            {t(locale, 'regionMap.body2End')}
           </p>
         </div>
 
         <div class="mt-8 grid grid-cols-2 gap-6">
           <div class="border-l-2 border-accent-500 pl-4">
-            <div class="text-2xl font-bold text-veritiv-900">Tijuana</div>
-            <p class="text-sm text-body-muted mt-1">Engineering & production facilities</p>
+            <div class="text-2xl font-bold text-veritiv-900">{t(locale, 'regionMap.tijuanaTitle')}</div>
+            <p class="text-sm text-body-muted mt-1">{t(locale, 'regionMap.tijuanaDesc')}</p>
           </div>
           <div class="border-l-2 border-accent-500 pl-4">
-            <div class="text-2xl font-bold text-veritiv-900">San Diego</div>
-            <p class="text-sm text-body-muted mt-1">Distribution & client services</p>
+            <div class="text-2xl font-bold text-veritiv-900">{t(locale, 'regionMap.sanDiegoTitle')}</div>
+            <p class="text-sm text-body-muted mt-1">{t(locale, 'regionMap.sanDiegoDesc')}</p>
           </div>
         </div>
       </div>
