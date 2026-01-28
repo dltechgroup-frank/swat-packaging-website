@@ -118,20 +118,6 @@ export default function HeroCarousel({ slides, interval = 6000 }: Props) {
         )}
       </AnimatePresence>
 
-      {/* Decorative background elements (fallback when no image) */}
-      {!currentSlide.image && (
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full blur-3xl"
-            style={{ backgroundColor: "#00A25F" }}
-          />
-          <div
-            className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] rounded-full blur-3xl"
-            style={{ backgroundColor: "#2A5B66" }}
-          />
-        </div>
-      )}
-
 
       {/* Content area */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
