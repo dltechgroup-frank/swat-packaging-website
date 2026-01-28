@@ -4,13 +4,14 @@ import { t, localizeHref } from '../../i18n/utils';
 import Container from '../ui/Container.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 import Card from '../ui/Card.astro';
-import { services } from '../../data/services';
+import { getServices } from '../../data/services';
 
 interface Props {
   locale?: Locale;
 }
 
 const { locale = 'es' } = Astro.props;
+const services = getServices(locale);
 ---
 
 <section class="py-20 lg:py-28 bg-surface-light">

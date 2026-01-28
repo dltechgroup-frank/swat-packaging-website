@@ -6,6 +6,7 @@ interface Slide {
   title: string;
   subtitle: string;
   cta: { text: string; href: string };
+  image?: string;
 }
 
 interface Props {
@@ -95,17 +96,44 @@ export default function HeroCarousel({ slides, interval = 6000 }: Props) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full blur-3xl"
-          style={{ backgroundColor: "#00A25F" }}
-        />
-        <div
-          className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{ backgroundColor: "#2A5B66" }}
-        />
-      </div>
+      {/* Background image with transition */}
+      <AnimatePresence mode="wait">
+        {currentSlide.image && (
+          <motion.div
+            key={`bg-${currentIndex}`}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <img
+              src={currentSlide.image}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Dark overlay for text readability */}
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: "rgba(0, 49, 60, 0.75)" }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Decorative background elements (visible when no image) */}
+      {!currentSlide.image && (
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full blur-3xl"
+            style={{ backgroundColor: "#00A25F" }}
+          />
+          <div
+            className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] rounded-full blur-3xl"
+            style={{ backgroundColor: "#2A5B66" }}
+          />
+        </div>
+      )}
 
       {/* Grid pattern overlay */}
       <div
