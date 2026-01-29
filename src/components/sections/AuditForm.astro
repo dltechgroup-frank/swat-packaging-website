@@ -198,3 +198,19 @@ const { locale = 'es' } = Astro.props;
 </section>
 
 <script src="https://web3forms.com/client/script.js" async defer></script>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const auditForm = document.querySelector('form[action*="web3forms"]');
+    if (auditForm && auditForm.closest('section.bg-surface-light')) {
+      auditForm.addEventListener('submit', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'audit_form_submit', {
+            'event_category': 'engagement',
+            'event_label': 'Audit Request Form'
+          });
+        }
+      });
+    }
+  });
+</script>

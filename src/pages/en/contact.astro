@@ -47,7 +47,7 @@ const locale: Locale = 'en';
               </div>
               <div>
                 <h3 class="text-sm font-semibold text-veritiv-900">{t(locale, 'contact.phoneLabel')}</h3>
-                <a href="tel:+5216631107814" class="text-body-muted hover:text-accent-500 transition-colors">
+                <a href="tel:+5216631107814" class="text-body-muted hover:text-accent-500 transition-colors" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'Contact Page Phone'})">
                   +52 (663) 110-7814
                 </a>
               </div>
@@ -62,7 +62,7 @@ const locale: Locale = 'en';
               </div>
               <div>
                 <h3 class="text-sm font-semibold text-veritiv-900">{t(locale, 'contact.emailLabel')}</h3>
-                <a href={`mailto:${siteConfig.email}`} class="text-body-muted hover:text-accent-500 transition-colors">
+                <a href={`mailto:${siteConfig.email}`} class="text-body-muted hover:text-accent-500 transition-colors" onclick="gtag('event', 'email_click', {'event_category': 'contact', 'event_label': 'Contact Page Email'})">
                   {siteConfig.email}
                 </a>
               </div>
@@ -105,7 +105,7 @@ const locale: Locale = 'en';
               </svg>
               <div>
                 <p class="font-semibold text-veritiv-900">WhatsApp</p>
-                <a href="https://wa.me/5216631107814" target="_blank" rel="noopener noreferrer" class="text-accent-600 hover:text-accent-700 font-medium">
+                <a href="https://wa.me/5216631107814" target="_blank" rel="noopener noreferrer" class="text-accent-600 hover:text-accent-700 font-medium" onclick="gtag('event', 'whatsapp_click', {'event_category': 'contact', 'event_label': 'Contact Page WhatsApp'})">
                   {t(locale, 'whatsapp.chatWithUs')} →
                 </a>
               </div>
@@ -156,4 +156,20 @@ const locale: Locale = 'en';
     buttonText={t(locale, 'contact.ctaButton')}
     buttonHref={localizeHref(locale, '/audit')}
   />
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.querySelector('.bg-surface-light form[action*="web3forms"]');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function() {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'contact_form_submit', {
+              'event_category': 'engagement',
+              'event_label': 'Contact Form'
+            });
+          }
+        });
+      }
+    });
+  </script>
 </BaseLayout>

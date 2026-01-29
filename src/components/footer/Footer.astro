@@ -63,12 +63,12 @@ const navItems = [
         </h3>
         <ul class="space-y-3 text-sm text-veritiv-200">
           <li>
-            <a href={`mailto:${siteConfig.email}`} class="hover:text-accent-400 transition-colors duration-200">
+            <a href={`mailto:${siteConfig.email}`} class="hover:text-accent-400 transition-colors duration-200" onclick="gtag('event', 'email_click', {'event_category': 'contact', 'event_label': 'Footer Email'})">
               {siteConfig.email}
             </a>
           </li>
           <li>
-            <a href="tel:+5216631107814" class="hover:text-accent-400 transition-colors duration-200">
+            <a href="tel:+5216631107814" class="hover:text-accent-400 transition-colors duration-200" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'Footer Phone'})">
               +52 (663) 110-7814
             </a>
           </li>

@@ -70,4 +70,34 @@ const enUrl = new URL(`/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
   rel="stylesheet"
 />
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5S6KG0C55Z"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5S6KG0C55Z');
+
+  // CTA click tracking
+  document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      // Track CTA clicks to key pages
+      if (href.match(/\/(audit|en\/audit)$/)) {
+        gtag('event', 'cta_click', {
+          'event_category': 'engagement',
+          'event_label': 'Audit CTA'
+        });
+      } else if (href.match(/\/(contact|en\/contact)$/)) {
+        gtag('event', 'cta_click', {
+          'event_category': 'engagement',
+          'event_label': 'Contact CTA'
+        });
+      }
+    });
+  });
+</script>
+
 <slot />
