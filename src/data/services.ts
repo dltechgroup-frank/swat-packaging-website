@@ -7,6 +7,7 @@ export interface Service {
   shortDescription: string;
   fullDescription: string;
   icon: string;
+  image: string;
   features: string[];
   badge?: string;
   sectors: string[];
@@ -187,24 +188,25 @@ export const services: Service[] = [
 
 export function getServices(locale: Locale): Service[] {
   const keys = [
-    { slug: 'smart-labeling', key: 'smartLabeling', icon: 'rfid', badge: '$47.72B Market', sectors: ['medical', 'electronics', 'automotive', 'retail'] },
-    { slug: 'medical-packaging', key: 'medicalPkg', icon: 'medical', badge: 'ISO 13485', sectors: ['medical', 'pharmaceutical'] },
-    { slug: 'cold-chain', key: 'coldChain', icon: 'coldchain', badge: 'Temp-Safe', sectors: ['medical', 'pharmaceutical', 'electronics'] },
-    { slug: 'sustainability', key: 'sustainability', icon: 'sustainability', badge: '30% Waste Reduction', sectors: ['medical', 'electronics', 'automotive', 'retail'] },
-    { slug: 'export-crating', key: 'exportCrating', icon: 'crating', badge: 'USMCA', sectors: ['automotive', 'electronics', 'retail'] },
-    { slug: 'cad-optimization', key: 'cadOpt', icon: 'cad', badge: '20% Smaller', sectors: ['electronics', 'automotive', 'retail'] },
-    { slug: 'recycled-resins', key: 'recycledResins', icon: 'recycled', badge: 'APR-PCR-101', sectors: ['medical', 'electronics', 'automotive', 'retail'] },
-    { slug: 'automated-kitting', key: 'automatedKitting', icon: 'automation', badge: 'Industry 4.0', sectors: ['electronics', 'automotive'] },
-    { slug: 'corrugated-solutions', key: 'corrugatedSolutions', icon: 'corrugated', badge: 'Custom Design', sectors: ['medical', 'electronics', 'automotive', 'retail', 'pharmaceutical'] },
-    { slug: 'flexible-packaging', key: 'flexiblePkg', icon: 'flexible', badge: 'Industrial Grade', sectors: ['electronics', 'automotive', 'retail', 'pharmaceutical'] },
+    { slug: 'smart-labeling', key: 'smartLabeling', icon: 'rfid', badge: '$47.72B Market', sectors: ['medical', 'electronics', 'automotive', 'retail'], image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80' }, // Barcode scanning
+    { slug: 'medical-packaging', key: 'medicalPkg', icon: 'medical', badge: 'ISO 13485', sectors: ['medical', 'pharmaceutical'], image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80' }, // Medical supplies
+    { slug: 'cold-chain', key: 'coldChain', icon: 'coldchain', badge: 'Temp-Safe', sectors: ['medical', 'pharmaceutical', 'electronics'], image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=800&q=80' }, // Cold storage
+    { slug: 'sustainability', key: 'sustainability', icon: 'sustainability', badge: '30% Waste Reduction', sectors: ['medical', 'electronics', 'automotive', 'retail'], image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80' }, // Recycling cardboard
+    { slug: 'export-crating', key: 'exportCrating', icon: 'crating', badge: 'USMCA', sectors: ['automotive', 'electronics', 'retail'], image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80' }, // Warehouse boxes
+    { slug: 'cad-optimization', key: 'cadOpt', icon: 'cad', badge: '20% Smaller', sectors: ['electronics', 'automotive', 'retail'], image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80' }, // CAD engineering
+    { slug: 'recycled-resins', key: 'recycledResins', icon: 'recycled', badge: 'APR-PCR-101', sectors: ['medical', 'electronics', 'automotive', 'retail'], image: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=800&q=80' }, // Recycled plastic
+    { slug: 'automated-kitting', key: 'automatedKitting', icon: 'automation', badge: 'Industry 4.0', sectors: ['electronics', 'automotive'], image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?auto=format&fit=crop&w=800&q=80' }, // Industrial automation
+    { slug: 'corrugated-solutions', key: 'corrugatedSolutions', icon: 'corrugated', badge: 'Custom Design', sectors: ['medical', 'electronics', 'automotive', 'retail', 'pharmaceutical'], image: 'https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=800&q=80' }, // Cardboard boxes
+    { slug: 'flexible-packaging', key: 'flexiblePkg', icon: 'flexible', badge: 'Industrial Grade', sectors: ['electronics', 'automotive', 'retail', 'pharmaceutical'], image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80' }, // Packaging materials
   ];
 
-  return keys.map(({ slug, key, icon, badge, sectors }) => ({
+  return keys.map(({ slug, key, icon, badge, sectors, image }) => ({
     slug,
     title: t(locale, `svc.${key}.title`),
     shortDescription: t(locale, `svc.${key}.short`),
     fullDescription: t(locale, `svc.${key}.full`),
     icon,
+    image,
     features: [
       t(locale, `svc.${key}.f1`),
       t(locale, `svc.${key}.f2`),
