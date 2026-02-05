@@ -33,7 +33,7 @@ export const en: Record<string, string> = {
   // serviceGrid
   'serviceGrid.tag': 'What We Do',
   'serviceGrid.title': 'Industrial Packaging Solutions',
-  'serviceGrid.subtitle': 'Eight specialized capabilities engineered for the demands of cross-border manufacturing.',
+  'serviceGrid.subtitle': 'Ten specialized capabilities engineered for the demands of cross-border manufacturing.',
 
   // sectors
   'sectors.tag': 'Sectors',
@@ -215,9 +215,9 @@ export const en: Record<string, string> = {
 
   // services
   'services.title': 'Services',
-  'services.metaDesc': 'Eight specialized industrial packaging solutions: smart labeling, medical packaging, cold chain, sustainability, USMCA-compliant crating, CAD optimization, recycled resins, and automated kitting.',
+  'services.metaDesc': 'Ten specialized industrial packaging solutions: corrugated, flexible polyethylene, smart labeling, medical packaging, cold chain, sustainability, USMCA-compliant crating, CAD optimization, recycled resins, and automated kitting.',
   'services.heroTitle': 'Industrial Packaging Solutions',
-  'services.heroSubtitle': 'Eight specialized capabilities engineered for Medical Device, Electronics, and Automotive manufacturers operating across the U.S.-Mexico border.',
+  'services.heroSubtitle': 'Ten specialized capabilities engineered for Medical Device, Electronics, Automotive, Pharmaceutical, and Retail manufacturers operating across the U.S.-Mexico border.',
   'services.ctaTitle': 'Find the Right Solution',
   'services.ctaDesc': 'Not sure which services fit your operation? Our engineers will assess your packaging needs and recommend the right combination.',
   'services.ctaButton': 'Start with a Free Audit',
@@ -322,6 +322,20 @@ export const en: Record<string, string> = {
   'svc.automatedKitting.f2': 'Robotic kitting and assembly',
   'svc.automatedKitting.f3': 'Production line integration',
   'svc.automatedKitting.f4': 'Eastern corridor facility access',
+  'svc.corrugatedSolutions.title': 'Corrugated Packaging Solutions',
+  'svc.corrugatedSolutions.short': 'Custom corrugated boxes engineered with A, B, C, and E flute options for optimal protection.',
+  'svc.corrugatedSolutions.full': 'Comprehensive corrugated packaging solutions featuring structural design expertise across all flute types (A, B, C, E) to deliver the perfect balance of protection, cost efficiency, and sustainability for cross-border shipments.',
+  'svc.corrugatedSolutions.f1': 'Full flute range (A, B, C, E) for varied applications',
+  'svc.corrugatedSolutions.f2': 'Custom structural design and CAD engineering',
+  'svc.corrugatedSolutions.f3': 'RSC, HSC, and die-cut box styles',
+  'svc.corrugatedSolutions.f4': 'ISTA-tested designs for shipping durability',
+  'svc.flexiblePkg.title': 'Flexible Polyethylene Packaging',
+  'svc.flexiblePkg.short': 'LDPE and HDPE bags engineered for industrial protection and product integrity.',
+  'svc.flexiblePkg.full': 'Industrial-grade polyethylene packaging solutions featuring both LDPE (low-density) for flexibility and HDPE (high-density) for strength, engineered to protect components during cross-border transit and storage.',
+  'svc.flexiblePkg.f1': 'LDPE bags for cushioning and flexibility',
+  'svc.flexiblePkg.f2': 'HDPE bags for puncture and moisture resistance',
+  'svc.flexiblePkg.f3': 'Custom sizes and printing options',
+  'svc.flexiblePkg.f4': 'Anti-static and VCI options for electronics',
 
   // compliance data (for compliance.ts)
   'complianceData.usmcaTitle': 'USMCA Rules of Origin',

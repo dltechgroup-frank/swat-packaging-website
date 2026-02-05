@@ -149,18 +149,54 @@ export const services: Service[] = [
     badge: 'Industry 4.0',
     sectors: ['electronics', 'automotive'],
   },
+  {
+    slug: 'corrugated-solutions',
+    title: 'Corrugated Packaging Solutions',
+    shortDescription:
+      'Custom corrugated boxes engineered with A, B, C, and E flute options for optimal protection.',
+    fullDescription:
+      'Comprehensive corrugated packaging solutions featuring structural design expertise across all flute types (A, B, C, E) to deliver the perfect balance of protection, cost efficiency, and sustainability for cross-border shipments.',
+    icon: 'corrugated',
+    features: [
+      'Full flute range (A, B, C, E) for varied applications',
+      'Custom structural design and CAD engineering',
+      'RSC, HSC, and die-cut box styles',
+      'ISTA-tested designs for shipping durability',
+    ],
+    badge: 'Custom Design',
+    sectors: ['medical', 'electronics', 'automotive', 'retail', 'pharmaceutical'],
+  },
+  {
+    slug: 'flexible-packaging',
+    title: 'Flexible Polyethylene Packaging',
+    shortDescription:
+      'LDPE and HDPE bags engineered for industrial protection and product integrity.',
+    fullDescription:
+      'Industrial-grade polyethylene packaging solutions featuring both LDPE (low-density) for flexibility and HDPE (high-density) for strength, engineered to protect components during cross-border transit and storage.',
+    icon: 'flexible',
+    features: [
+      'LDPE bags for cushioning and flexibility',
+      'HDPE bags for puncture and moisture resistance',
+      'Custom sizes and printing options',
+      'Anti-static and VCI options for electronics',
+    ],
+    badge: 'Industrial Grade',
+    sectors: ['electronics', 'automotive', 'retail', 'pharmaceutical'],
+  },
 ];
 
 export function getServices(locale: Locale): Service[] {
   const keys = [
-    { slug: 'smart-labeling', key: 'smartLabeling', icon: 'rfid', badge: '$47.72B Market', sectors: ['medical', 'electronics', 'automotive'] },
-    { slug: 'medical-packaging', key: 'medicalPkg', icon: 'medical', badge: 'ISO 13485', sectors: ['medical'] },
-    { slug: 'cold-chain', key: 'coldChain', icon: 'coldchain', badge: 'Temp-Safe', sectors: ['medical', 'electronics'] },
-    { slug: 'sustainability', key: 'sustainability', icon: 'sustainability', badge: '30% Waste Reduction', sectors: ['medical', 'electronics', 'automotive'] },
-    { slug: 'export-crating', key: 'exportCrating', icon: 'crating', badge: 'USMCA', sectors: ['automotive', 'electronics'] },
-    { slug: 'cad-optimization', key: 'cadOpt', icon: 'cad', badge: '20% Smaller', sectors: ['electronics', 'automotive'] },
-    { slug: 'recycled-resins', key: 'recycledResins', icon: 'recycled', badge: 'APR-PCR-101', sectors: ['medical', 'electronics', 'automotive'] },
+    { slug: 'smart-labeling', key: 'smartLabeling', icon: 'rfid', badge: '$47.72B Market', sectors: ['medical', 'electronics', 'automotive', 'retail'] },
+    { slug: 'medical-packaging', key: 'medicalPkg', icon: 'medical', badge: 'ISO 13485', sectors: ['medical', 'pharmaceutical'] },
+    { slug: 'cold-chain', key: 'coldChain', icon: 'coldchain', badge: 'Temp-Safe', sectors: ['medical', 'pharmaceutical', 'electronics'] },
+    { slug: 'sustainability', key: 'sustainability', icon: 'sustainability', badge: '30% Waste Reduction', sectors: ['medical', 'electronics', 'automotive', 'retail'] },
+    { slug: 'export-crating', key: 'exportCrating', icon: 'crating', badge: 'USMCA', sectors: ['automotive', 'electronics', 'retail'] },
+    { slug: 'cad-optimization', key: 'cadOpt', icon: 'cad', badge: '20% Smaller', sectors: ['electronics', 'automotive', 'retail'] },
+    { slug: 'recycled-resins', key: 'recycledResins', icon: 'recycled', badge: 'APR-PCR-101', sectors: ['medical', 'electronics', 'automotive', 'retail'] },
     { slug: 'automated-kitting', key: 'automatedKitting', icon: 'automation', badge: 'Industry 4.0', sectors: ['electronics', 'automotive'] },
+    { slug: 'corrugated-solutions', key: 'corrugatedSolutions', icon: 'corrugated', badge: 'Custom Design', sectors: ['medical', 'electronics', 'automotive', 'retail', 'pharmaceutical'] },
+    { slug: 'flexible-packaging', key: 'flexiblePkg', icon: 'flexible', badge: 'Industrial Grade', sectors: ['electronics', 'automotive', 'retail', 'pharmaceutical'] },
   ];
 
   return keys.map(({ slug, key, icon, badge, sectors }) => ({

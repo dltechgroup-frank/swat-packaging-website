@@ -39,7 +39,7 @@ export const es: Record<string, string> = {
   'serviceGrid.tag': 'Lo Que Hacemos',
   'serviceGrid.title': 'Soluciones de Empaque Industrial',
   'serviceGrid.subtitle':
-    'Ocho capacidades especializadas diseñadas para las exigencias de la manufactura transfronteriza.',
+    'Diez capacidades especializadas diseñadas para las exigencias de la manufactura transfronteriza.',
 
   // sectors
   'sectors.tag': 'Sectores',
@@ -264,10 +264,10 @@ export const es: Record<string, string> = {
   // services
   'services.title': 'Servicios',
   'services.metaDesc':
-    'Ocho soluciones especializadas de empaque industrial: etiquetado inteligente, empaque médico, cadena de frío, sustentabilidad, embalaje compatible con TMEC, optimización CAD, resinas recicladas y kitting automatizado.',
+    'Diez soluciones especializadas de empaque industrial: corrugado, polietileno flexible, etiquetado inteligente, empaque médico, cadena de frío, sustentabilidad, embalaje compatible con TMEC, optimización CAD, resinas recicladas y kitting automatizado.',
   'services.heroTitle': 'Soluciones de Empaque Industrial',
   'services.heroSubtitle':
-    'Ocho capacidades especializadas diseñadas para fabricantes de Dispositivos Médicos, Electrónica y Automotriz que operan a través de la frontera EE.UU.-México.',
+    'Diez capacidades especializadas diseñadas para fabricantes de Dispositivos Médicos, Electrónica, Automotriz, Farmacéutica y Retail que operan a través de la frontera EE.UU.-México.',
   'services.ctaTitle': 'Encuentra la Solución Correcta',
   'services.ctaDesc':
     '¿No estás seguro de qué servicios se adaptan a tu operación? Nuestros ingenieros evaluarán tus necesidades de empaque y recomendarán la combinación correcta.',
@@ -422,6 +422,28 @@ export const es: Record<string, string> = {
   'svc.automatedKitting.f3': 'Integración de línea de producción',
   'svc.automatedKitting.f4':
     'Acceso a instalaciones del corredor este',
+
+  // svc - Corrugated Solutions
+  'svc.corrugatedSolutions.title': 'Soluciones de Empaque Corrugado',
+  'svc.corrugatedSolutions.short':
+    'Cajas corrugadas personalizadas diseñadas con opciones de flauta A, B, C y E para protección óptima.',
+  'svc.corrugatedSolutions.full':
+    'Soluciones integrales de empaque corrugado con experiencia en diseño estructural en todos los tipos de flauta (A, B, C, E) para entregar el equilibrio perfecto entre protección, eficiencia de costos y sustentabilidad para envíos transfronterizos.',
+  'svc.corrugatedSolutions.f1': 'Rango completo de flautas (A, B, C, E) para aplicaciones variadas',
+  'svc.corrugatedSolutions.f2': 'Diseño estructural personalizado e ingeniería CAD',
+  'svc.corrugatedSolutions.f3': 'Estilos RSC, HSC y cajas troqueladas',
+  'svc.corrugatedSolutions.f4': 'Diseños probados con ISTA para durabilidad en envío',
+
+  // svc - Flexible Packaging
+  'svc.flexiblePkg.title': 'Empaque Flexible de Polietileno',
+  'svc.flexiblePkg.short':
+    'Bolsas LDPE y HDPE diseñadas para protección industrial e integridad del producto.',
+  'svc.flexiblePkg.full':
+    'Soluciones de empaque de polietileno de grado industrial con LDPE (baja densidad) para flexibilidad y HDPE (alta densidad) para resistencia, diseñadas para proteger componentes durante el tránsito y almacenamiento transfronterizo.',
+  'svc.flexiblePkg.f1': 'Bolsas LDPE para amortiguación y flexibilidad',
+  'svc.flexiblePkg.f2': 'Bolsas HDPE para resistencia a perforaciones y humedad',
+  'svc.flexiblePkg.f3': 'Tamaños personalizados y opciones de impresión',
+  'svc.flexiblePkg.f4': 'Opciones antiestáticas y VCI para electrónicos',
 
   // complianceData
   'complianceData.usmcaTitle': 'Reglas de Origen del TMEC',
