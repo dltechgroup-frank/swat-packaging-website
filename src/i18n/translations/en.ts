@@ -38,13 +38,17 @@ export const en: Record<string, string> = {
   // sectors
   'sectors.tag': 'Sectors',
   'sectors.title': 'Your Industry, Our Expertise',
-  'sectors.subtitle': 'Deep specialization in the three sectors driving Tijuana\'s industrial growth.',
+  'sectors.subtitle': 'Deep specialization in the five sectors driving cross-border manufacturing growth.',
   'sectors.medicalTitle': 'Medical Device',
   'sectors.medicalDesc': 'ISO 13485-compliant sterile barrier packaging for North America\'s largest medical device manufacturing cluster.',
   'sectors.electronicsTitle': 'Electronics',
   'sectors.electronicsDesc': 'ESD-safe packaging solutions with smart labeling and asset tracking for high-value electronics assembly.',
   'sectors.automotiveTitle': 'Automotive',
   'sectors.automotiveDesc': 'USMCA-compliant export crating and automated kitting solutions for cross-border automotive supply chains.',
+  'sectors.pharmaceuticalTitle': 'Pharmaceutical',
+  'sectors.pharmaceuticalDesc': 'Sterile and clean packaging solutions for pharmaceutical manufacturing with cold chain and compliance documentation.',
+  'sectors.retailTitle': 'Retail & E-Commerce',
+  'sectors.retailDesc': 'Freight-optimized packaging and fulfillment solutions for high-volume retail and direct-to-consumer shipments.',
 
   // nearshore
   'nearshore.badge': 'Nearshoring Solutions',

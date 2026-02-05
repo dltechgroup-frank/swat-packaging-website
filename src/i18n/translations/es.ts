@@ -45,7 +45,7 @@ export const es: Record<string, string> = {
   'sectors.tag': 'Sectores',
   'sectors.title': 'Tu Industria, Nuestra Experiencia',
   'sectors.subtitle':
-    'Especialización profunda en los tres sectores que impulsan el crecimiento industrial de Tijuana.',
+    'Especialización profunda en los cinco sectores que impulsan el crecimiento de la manufactura transfronteriza.',
   'sectors.medicalTitle': 'Dispositivos Médicos',
   'sectors.medicalDesc':
     'Empaque de barrera estéril compatible con ISO 13485 para el clúster de manufactura de dispositivos médicos más grande de Norteamérica.',
@@ -55,6 +55,12 @@ export const es: Record<string, string> = {
   'sectors.automotiveTitle': 'Automotriz',
   'sectors.automotiveDesc':
     'Embalaje de exportación compatible con el TMEC y soluciones de kitting automatizado para cadenas de suministro automotriz transfronterizas.',
+  'sectors.pharmaceuticalTitle': 'Farmacéutica',
+  'sectors.pharmaceuticalDesc':
+    'Soluciones de empaque estéril y limpio para manufactura farmacéutica con cadena de frío y documentación de cumplimiento.',
+  'sectors.retailTitle': 'Retail y E-Commerce',
+  'sectors.retailDesc':
+    'Empaque optimizado para flete y soluciones de fulfillment para envíos de alto volumen en retail y directo al consumidor.',
 
   // nearshore
   'nearshore.badge': 'Soluciones de Nearshoring',
