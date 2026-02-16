@@ -42,9 +42,21 @@ const countdownLabels = {
           {t(locale, 'webinar.heroTitle')}
         </h1>
 
-        <p class="text-xl lg:text-2xl font-medium mb-8" style="color: #FF6700;">
+        <p class="text-lg lg:text-xl font-medium mb-8" style="color: #A5C2C9;">
           {t(locale, 'webinar.heroSubtitle')}
         </p>
+
+        <!-- YouTube Video Embed -->
+        <div class="mb-8 aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10">
+          <iframe
+            src="https://www.youtube.com/embed/Jm2XN09-g2k"
+            title="SWAT Packaging Webinar"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+            class="w-full h-full"
+          ></iframe>
+        </div>
 
         <!-- Event details -->
         <div class="flex flex-wrap items-center gap-4 mb-8 text-sm" style="color: #A5C2C9;">

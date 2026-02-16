@@ -10,87 +10,103 @@ interface Props {
 
 const { locale = 'es' } = Astro.props;
 
-const specialties = [
-  t(locale, 'webinar.speakerSpecialty1'),
-  t(locale, 'webinar.speakerSpecialty2'),
-  t(locale, 'webinar.speakerSpecialty3'),
-  t(locale, 'webinar.speakerSpecialty4'),
+const speakers = [
+  {
+    name: t(locale, 'webinar.speaker1Name'),
+    role: t(locale, 'webinar.speaker1Role'),
+    bio: t(locale, 'webinar.speaker1Bio'),
+    experience: t(locale, 'webinar.speaker1Experience'),
+    specialties: [
+      t(locale, 'webinar.speaker1Specialty1'),
+      t(locale, 'webinar.speaker1Specialty2'),
+      t(locale, 'webinar.speaker1Specialty3'),
+      t(locale, 'webinar.speaker1Specialty4'),
+    ],
+  },
+  {
+    name: t(locale, 'webinar.speaker2Name'),
+    role: t(locale, 'webinar.speaker2Role'),
+    bio: t(locale, 'webinar.speaker2Bio'),
+    experience: t(locale, 'webinar.speaker2Experience'),
+    specialties: [
+      t(locale, 'webinar.speaker2Specialty1'),
+      t(locale, 'webinar.speaker2Specialty2'),
+      t(locale, 'webinar.speaker2Specialty3'),
+      t(locale, 'webinar.speaker2Specialty4'),
+    ],
+  },
 ];
 ---
 
 <section class="py-16 lg:py-24 bg-surface-light">
   <Container>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Photo -->
-      <div class="relative" data-animate>
-        <div class="aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-veritiv-100 shadow-xl">
-          <!-- Placeholder for speaker photo -->
-          <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-veritiv-800 to-veritiv-900">
-            <div class="text-center">
-              <div class="w-32 h-32 rounded-full bg-veritiv-700 mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-16 h-16 text-veritiv-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>
-              </div>
-              <p class="text-veritiv-400 text-sm">Speaker Photo</p>
+    <div class="text-center mb-12" data-animate>
+      <Badge>{t(locale, 'webinar.speakerTag')}</Badge>
+      <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-veritiv-900">
+        {t(locale, 'webinar.speakerTitle')}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {speakers.map((speaker) => (
+        <div class="bg-white rounded-2xl p-6 lg:p-8 border border-veritiv-100 shadow-sm hover:shadow-md transition-shadow" data-animate>
+          <!-- Photo placeholder + experience badge -->
+          <div class="relative mb-6">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-veritiv-800 to-veritiv-900 mx-auto flex items-center justify-center">
+              <svg class="w-12 h-12 text-veritiv-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-accent-500 text-white px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+              {speaker.experience}
             </div>
           </div>
-        </div>
 
-        <!-- Experience badge -->
-        <div class="absolute -bottom-4 -right-4 lg:right-auto lg:-left-4 bg-accent-500 text-white px-4 py-2 rounded-lg shadow-lg">
-          <span class="font-bold">{t(locale, 'webinar.speakerExperience')}</span>
-        </div>
-      </div>
+          <!-- Name & role -->
+          <div class="text-center mb-4">
+            <h3 class="text-xl font-bold text-veritiv-900">{speaker.name}</h3>
+            <p class="mt-1 text-sm text-accent-500 font-medium">{speaker.role}</p>
+          </div>
 
-      <!-- Bio content -->
-      <div class="lg:pl-8" data-animate>
-        <Badge>{t(locale, 'webinar.speakerTag')}</Badge>
+          <!-- Bio -->
+          <p class="text-sm text-body-muted leading-relaxed mb-6 text-center">
+            {speaker.bio}
+          </p>
 
-        <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-veritiv-900">
-          {t(locale, 'webinar.speakerName')}
-        </h2>
-
-        <p class="mt-2 text-lg text-accent-500 font-medium">
-          {t(locale, 'webinar.speakerRole')}
-        </p>
-
-        <p class="mt-6 text-body-muted leading-relaxed">
-          {t(locale, 'webinar.speakerBio')}
-        </p>
-
-        <!-- Specialties -->
-        <div class="mt-8">
-          <h3 class="text-sm font-semibold text-veritiv-700 uppercase tracking-wider mb-4">
-            {locale === 'es' ? 'Especialidades' : 'Specialties'}
-          </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {specialties.map((specialty) => (
-              <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 border border-veritiv-100">
-                <svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <!-- Specialties -->
+          <div class="grid grid-cols-2 gap-2">
+            {speaker.specialties.map((specialty) => (
+              <div class="flex items-center gap-2 bg-surface-light rounded-lg px-3 py-2 border border-veritiv-50">
+                <svg class="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span class="text-sm text-veritiv-700">{specialty}</span>
+                <span class="text-xs text-veritiv-700">{specialty}</span>
               </div>
             ))}
           </div>
         </div>
+      ))}
+    </div>
 
-        <!-- Social proof -->
-        <div class="mt-8 flex items-center gap-6 text-sm text-body-muted">
-          <div class="flex items-center gap-2">
-            <svg class="w-4 h-4 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-            </svg>
-            <span>{locale === 'es' ? '500+ empresas asesoradas' : '500+ companies advised'}</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-4 h-4 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-            </svg>
-            <span>{locale === 'es' ? 'EE.UU. y México' : 'US & Mexico'}</span>
-          </div>
-        </div>
+    <!-- Combined social proof -->
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-body-muted" data-animate>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+        </svg>
+        <span>{locale === 'es' ? '500+ empresas asesoradas' : '500+ companies advised'}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+        </svg>
+        <span>{locale === 'es' ? 'EE.UU. y México' : 'US & Mexico'}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+        </svg>
+        <span>{locale === 'es' ? '35+ años de experiencia combinada' : '35+ combined years of experience'}</span>
       </div>
     </div>
   </Container>

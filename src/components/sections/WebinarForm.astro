@@ -186,6 +186,11 @@ const { locale = 'es', id = 'webinar-form' } = Astro.props;
             'event_label': 'Webinar Registration - Packaging Inteligente 2026'
           });
         }
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', {
+            content_name: 'Webinar Registration - Packaging Inteligente 2026'
+          });
+        }
       });
     }
   });
