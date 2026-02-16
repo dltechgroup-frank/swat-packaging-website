@@ -1,7 +1,7 @@
 ---
 interface Props {
-  text: string;
-  variant?: 'green' | 'teal' | 'neutral';
+  text?: string;
+  variant?: 'green' | 'teal' | 'neutral' | 'accent';
 }
 
 const { text, variant = 'green' } = Astro.props;
@@ -10,6 +10,7 @@ const variants = {
   green: 'bg-accent-50 text-accent-600',
   teal: 'bg-veritiv-50 text-veritiv-600',
   neutral: 'bg-slate-100 text-slate-600',
+  accent: 'bg-accent-500/20 text-accent-400',
 };
 ---
 
@@ -19,5 +20,5 @@ const variants = {
     variants[variant],
   ]}
 >
-  {text}
+  {text ?? <slot />}
 </span>

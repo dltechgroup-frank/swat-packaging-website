@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WebinarHero from '../../components/sections/WebinarHero.astro';
+import WebinarAgenda from '../../components/sections/WebinarAgenda.astro';
+import WebinarSpeaker from '../../components/sections/WebinarSpeaker.astro';
+import WebinarBonus from '../../components/sections/WebinarBonus.astro';
+import Container from '../../components/ui/Container.astro';
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+
+const locale: Locale = 'en';
+---
+
+<BaseLayout
+  title={t(locale, 'webinar.title')}
+  description={t(locale, 'webinar.metaDesc')}
+  locale={locale}
+>
+  <WebinarHero locale={locale} />
+  <WebinarAgenda locale={locale} />
+  <WebinarSpeaker locale={locale} />
+  <WebinarBonus locale={locale} />
+
+  <!-- Bottom CTA Banner -->
+  <section class="py-16 lg:py-20" style="background-color: #00313C;">
+    <Container>
+      <div class="text-center max-w-3xl mx-auto" data-animate>
+        <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">
+          {t(locale, 'webinar.ctaTitle')}
+        </h2>
+        <p class="text-lg mb-8" style="color: #A5C2C9;">
+          {t(locale, 'webinar.ctaDesc')}
+        </p>
+
+        <!-- CTA Button -->
+        <a
+          href="#webinar-form"
+          class="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200 text-base focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-veritiv-900 mb-8"
+        >
+          {t(locale, 'webinar.ctaButton')}
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+          </svg>
+        </a>
+
+        <!-- Trust indicators -->
+        <div class="flex flex-wrap justify-center items-center gap-6 text-sm" style="color: #A5C2C9;">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>{t(locale, 'webinar.trustFree')}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+            <span>{t(locale, 'webinar.trustZoom')}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+            </svg>
+            <span>{t(locale, 'webinar.trustRecording')}</span>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
