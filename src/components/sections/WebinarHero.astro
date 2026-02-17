@@ -42,12 +42,13 @@ const countdownLabels = {
           {t(locale, 'webinar.heroTitle')}
         </h1>
 
-        <p class="text-lg lg:text-xl font-medium mb-8" style="color: #A5C2C9;">
+        <p class="text-base lg:text-lg font-medium mb-8 leading-relaxed" style="color: #A5C2C9;">
           {t(locale, 'webinar.heroSubtitle')}
         </p>
 
-        <!-- YouTube Video Embed -->
-        <div class="mb-8 aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10">
+        <!-- YouTube Video Embed with hover effect -->
+        <!-- TODO: Replace Jm2XN09-g2k with working video ID if current one remains unavailable -->
+        <div class="video-wrapper group mb-8 aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer relative">
           <iframe
             src="https://www.youtube.com/embed/Jm2XN09-g2k"
             title="SWAT Packaging Webinar"
@@ -114,3 +115,13 @@ const countdownLabels = {
     </div>
   </Container>
 </section>
+
+<style>
+  .video-wrapper {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .video-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(255, 103, 0, 0.25);
+  }
+</style>

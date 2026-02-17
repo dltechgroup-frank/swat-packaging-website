@@ -72,6 +72,13 @@ const locale: Locale = 'en';
       </div>
     </Container>
   </section>
+
+  <!-- Sticky mobile CTA bar -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-gradient-to-r from-[#00313C] to-[#004a5c] border-t border-white/10 px-4 py-3 shadow-2xl">
+    <a href="#webinar-form" class="block w-full text-center bg-[#FF6700] hover:bg-orange-600 text-white font-bold py-3 rounded-lg text-sm transition-colors">
+      {t(locale, 'webinar.ctaButton')}
+    </a>
+  </div>
 </BaseLayout>
 
 <style>
