@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://swatpackaging.com',
+  site: 'https://dltechgroup-frank.github.io',
+  base: '/swat-packaging-website',
   output: 'static',
   integrations: [react()],
   i18n: {
