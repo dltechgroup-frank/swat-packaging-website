@@ -46,17 +46,15 @@ const countdownLabels = {
           {t(locale, 'webinar.heroSubtitle')}
         </p>
 
-        <!-- YouTube Video Embed with hover effect -->
-        <!-- TODO: Replace Jm2XN09-g2k with working video ID if current one remains unavailable -->
-        <div class="video-wrapper group mb-8 aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer relative">
-          <iframe
-            src="https://www.youtube.com/embed/Jm2XN09-g2k"
-            title="SWAT Packaging Webinar"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-            class="w-full h-full"
-          ></iframe>
+        <!-- Webinar intro video -->
+        <div class="video-wrapper group mb-8 aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 relative">
+          <video
+            src="/videos/webinar_intro.mp4"
+            controls
+            playsinline
+            preload="metadata"
+            class="w-full h-full object-cover"
+          ></video>
         </div>
 
         <!-- Event details -->
