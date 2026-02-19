@@ -22,6 +22,13 @@ const certifications = [
   t(locale, 'webinar.socialCert2'),
   t(locale, 'webinar.socialCert3'),
 ];
+
+const logos = [
+  { name: 'Samsung', src: '/images/logos/samsung.png' },
+  { name: 'Veritiv', src: '/images/logos/veritiv.png' },
+  { name: 'Orora', src: '/images/logos/orora.png' },
+  { name: 'McCain', src: '/images/logos/mccain.png' },
+];
 ---
 
 <section class="py-16 lg:py-20 bg-white">
@@ -55,12 +62,15 @@ const certifications = [
       ))}
     </div>
 
-    <!-- Logo placeholders -->
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-8 opacity-40" data-animate>
-      {[1, 2, 3, 4, 5, 6].map(() => (
-        <div class="w-24 h-12 bg-veritiv-200 rounded-lg flex items-center justify-center">
-          <span class="text-xs text-veritiv-400 font-medium">Logo</span>
-        </div>
+    <!-- Client logos -->
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-10" data-animate>
+      {logos.map((logo) => (
+        <img
+          src={logo.src}
+          alt={logo.name}
+          class="h-8 lg:h-10 object-contain grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300"
+          loading="lazy"
+        />
       ))}
     </div>
   </Container>
