@@ -14,6 +14,7 @@ const speakers = [
   {
     name: t(locale, 'webinar.speaker1Name'),
     role: t(locale, 'webinar.speaker1Role'),
+    session: t(locale, 'webinar.speaker1Session'),
     bio: t(locale, 'webinar.speaker1Bio'),
     experience: t(locale, 'webinar.speaker1Experience'),
     image: '/images/fabian.jpg',
@@ -27,6 +28,7 @@ const speakers = [
   {
     name: t(locale, 'webinar.speaker2Name'),
     role: t(locale, 'webinar.speaker2Role'),
+    session: t(locale, 'webinar.speaker2Session'),
     bio: t(locale, 'webinar.speaker2Bio'),
     experience: t(locale, 'webinar.speaker2Experience'),
     image: '/images/ivan.jpeg',
@@ -40,6 +42,7 @@ const speakers = [
   {
     name: t(locale, 'webinar.speaker3Name'),
     role: t(locale, 'webinar.speaker3Role'),
+    session: t(locale, 'webinar.speaker3Session'),
     bio: t(locale, 'webinar.speaker3Bio'),
     experience: t(locale, 'webinar.speaker3Experience'),
     image: '/images/sergio.jpg',
@@ -53,6 +56,7 @@ const speakers = [
   {
     name: t(locale, 'webinar.speaker4Name'),
     role: t(locale, 'webinar.speaker4Role'),
+    session: t(locale, 'webinar.speaker4Session'),
     bio: t(locale, 'webinar.speaker4Bio'),
     experience: t(locale, 'webinar.speaker4Experience'),
     image: '/images/angel.jpg',
@@ -95,6 +99,12 @@ const speakers = [
           <div class="text-center mb-4">
             <h3 class="text-xl font-bold text-veritiv-900">{speaker.name}</h3>
             <p class="mt-1 text-sm text-accent-500 font-medium">{speaker.role}</p>
+            <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background-color: rgba(255, 103, 0, 0.15); color: #FF6700;">
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+              {speaker.session}
+            </div>
           </div>
 
           <!-- Bio -->

@@ -6,14 +6,14 @@ export const es: Record<string, string> = {
   'nav.compliance': 'Cumplimiento',
   'nav.audit': 'Auditoría',
   'nav.cta': 'Solicita Tu Auditoría',
-  'nav.mobileCta': 'Solicita Tu Auditoría Gratis',
+  'nav.mobileCta': 'Solicita Tu Auditoría',
 
   // common
   'common.veritivBadge': 'Una División de Veritiv Landsberg',
   'common.ctaDefaultTitle': '¿Listo para Optimizar su Empaque?',
   'common.ctaDefaultDescription':
     'Permita que nuestro equipo de ingeniería analice su empaque actual e identifique oportunidades de reducción de costos, mejoras en sustentabilidad y cumplimiento normativo.',
-  'common.ctaDefaultButton': 'Comienza con una Auditoría Gratis',
+  'common.ctaDefaultButton': 'Comienza con una Auditoría',
 
   // footer
   'footer.description':
@@ -29,7 +29,7 @@ export const es: Record<string, string> = {
     'Empaque Transfronterizo. <span class="text-accent-400">Diseñado para Impactar.</span>',
   'home.heroSubtitle':
     'SWAT Packaging Team ofrece soluciones de empaque industrial ágiles y de alto impacto en el corredor Tijuana-San Diego. Escala global de Veritiv. Precisión local de 30 años en la región.',
-  'home.heroCta': 'Solicita Tu Auditoría Gratis',
+  'home.heroCta': 'Solicita Tu Auditoría',
   'home.heroSecondaryCta': 'Explora Soluciones',
   'home.title': 'Inicio',
   'home.description':
@@ -164,7 +164,7 @@ export const es: Record<string, string> = {
   // audit
   'audit.title': 'Auditoría',
   'audit.metaDesc':
-    'Solicita tu auditoría de eficiencia de empaque 360° gratis. SWAT Packaging identifica aire innecesario, desperdicio de material y brechas de cumplimiento en tu empaque transfronterizo.',
+    'Solicita tu auditoría de eficiencia de empaque 360°. SWAT Packaging identifica aire innecesario, desperdicio de material y brechas de cumplimiento en tu empaque transfronterizo.',
   'audit.heroTitle': 'El Diagnóstico de Impacto SWAT',
   'audit.heroSubtitle':
     'Una auditoría de eficiencia de empaque de 360 grados que identifica "aire innecesario" en tus diseños — para que puedas reducir costos de flete, disminuir desperdicio de material y asegurar el cumplimiento transfronterizo.',
@@ -195,7 +195,7 @@ export const es: Record<string, string> = {
     'Puntos de dolor actuales, materiales utilizados, preocupaciones de cumplimiento...',
   'audit.selectSector': 'Selecciona sector',
   'audit.selectVolume': 'Selecciona volumen',
-  'audit.submitButton': 'Solicita Tu Auditoría Gratis',
+  'audit.submitButton': 'Solicita Tu Auditoría',
   'audit.whatToExpect': 'Qué Esperar',
   'audit.step1Title': 'Consulta Inicial',
   'audit.step1Desc':
@@ -223,9 +223,35 @@ export const es: Record<string, string> = {
   'audit.stat3Value': '48',
   'audit.stat3Suffix': 'hr',
   'audit.stat3Label': 'Tiempo de Respuesta',
-  'audit.stat4Value': '0',
-  'audit.stat4Prefix': '$',
-  'audit.stat4Label': 'Costo para Empezar',
+  'audit.stat4Value': '100',
+  'audit.stat4Prefix': '',
+  'audit.stat4Suffix': '%',
+  'audit.stat4Label': 'Confidencial',
+
+  // audit - 8 evaluation areas
+  'audit.evalSectionTag': '8 Áreas de Evaluación',
+  'audit.evalSectionTitle': 'Revisión Integral de Tu Operación de Empaque',
+  'audit.evalSectionSubtitle': 'Nuestros ingenieros realizan una revisión exhaustiva en sitio, evaluando cada dimensión de tu proceso de empaque para identificar oportunidades de reducción de costos.',
+  'audit.eval1Title': 'Reducción de Inventario',
+  'audit.eval1Desc': 'Análisis de oportunidades JIT (Just-In-Time) y VMI (Vendor Managed Inventory) para minimizar inventario en planta y capital atado.',
+  'audit.eval2Title': 'Mejora de Throughput',
+  'audit.eval2Desc': 'Evaluación de cuellos de botella en la línea de empaque y oportunidades para incrementar unidades por hora sin inversión de capital.',
+  'audit.eval3Title': 'Oportunidades de Automatización',
+  'audit.eval3Desc': 'Identificación de procesos manuales repetitivos que pueden automatizarse con Industria 4.0 y robótica para reducir costos operativos.',
+  'audit.eval4Title': 'Innovación en Empaque',
+  'audit.eval4Desc': 'Revisión de diseños actuales vs. alternativas de nueva generación: corrugado optimizado, soluciones mono-material y opciones sustentables.',
+  'audit.eval5Title': 'Reducción de Material',
+  'audit.eval5Desc': 'Ingeniería CAD para eliminar "aire innecesario", reducir dimensiones y optimizar el uso de material por unidad.',
+  'audit.eval6Title': 'Reducción de Mano de Obra',
+  'audit.eval6Desc': 'Análisis de procesos de armado, llenado y cierre de empaques para identificar eficiencias en mano de obra directa.',
+  'audit.eval7Title': 'Impacto Ambiental',
+  'audit.eval7Desc': 'Evaluación de huella de carbono del empaque, cumplimiento con REP 2026 y oportunidades de materiales reciclados certificados APR-PCR-101.',
+  'audit.eval8Title': 'Mejoras Ergonómicas',
+  'audit.eval8Desc': 'Revisión de peso, dimensiones y manejo de empaques en la línea de producción para mejorar seguridad del operario y reducir lesiones.',
+  'audit.deliverablesSectionTitle': '3 Entregables Concretos',
+  'audit.deliverable1': 'Identificación de oportunidades de mejora de costos con impacto cuantificado',
+  'audit.deliverable2': 'Plan de priorización: acciones ordenadas por impacto y esfuerzo',
+  'audit.deliverable3': 'Plan de ejecución con cronograma y seguimiento de rendimiento',
 
   // about
   'about.title': 'Nosotros',
@@ -277,7 +303,7 @@ export const es: Record<string, string> = {
   'services.ctaTitle': 'Encuentra la Solución Correcta',
   'services.ctaDesc':
     '¿No estás seguro de qué servicios se adaptan a tu operación? Nuestros ingenieros evaluarán tus necesidades de empaque y recomendarán la combinación correcta.',
-  'services.ctaButton': 'Comienza con una Auditoría Gratis',
+  'services.ctaButton': 'Comienza con una Auditoría',
 
   // compliance
   'compliance.title': 'Cumplimiento',
@@ -476,7 +502,7 @@ export const es: Record<string, string> = {
   'carousel.slide1.tag': 'Diagn\u00F3stico de Impacto SWAT',
   'carousel.slide1.title': 'Elimina el <span class="text-accent-400">Aire Innecesario</span> en Tu Empaque',
   'carousel.slide1.subtitle': 'Nuestro diagn\u00F3stico 360\u00B0 identifica desperdicio oculto, dise\u00F1os sobredimensionados y brechas de cumplimiento que le cuestan a tu operaci\u00F3n miles al mes.',
-  'carousel.slide1.cta': 'Solicita Tu Diagn\u00F3stico Gratis',
+  'carousel.slide1.cta': 'Solicita Tu Diagn\u00F3stico',
   'carousel.slide2.tag': 'Soluciones de Nearshoring',
   'carousel.slide2.title': 'Las Fronteras No Son <span class="text-accent-400">Barreras</span>',
   'carousel.slide2.subtitle': 'Empaque transfronterizo dise\u00F1ado para cumplimiento TMEC. Log\u00EDstica integrada en el corredor Tijuana\u2013San Diego con 30 a\u00F1os de experiencia.',
@@ -534,21 +560,21 @@ export const es: Record<string, string> = {
   'contact.submitButton': 'Enviar Mensaje',
   'contact.ctaTitle': '\u00BFPrefieres una Conversaci\u00F3n Directa?',
   'contact.ctaDesc': 'Ll\u00E1manos o env\u00EDa un mensaje de WhatsApp para asistencia inmediata con tus necesidades de empaque.',
-  'contact.ctaButton': 'Solicita Tu Auditor\u00EDa Gratis',
+  'contact.ctaButton': 'Solicita Tu Auditor\u00EDa',
 
   // whatsapp
   'whatsapp.chatWithUs': 'Escr\u00EDbenos',
 
   // webinar landing page
-  'webinar.title': 'Webinar: Reduce Hasta un 30% en Costos de Empaque | SWAT Packaging',
-  'webinar.metaDesc': 'El método probado por 500+ empresas para reducir costos de empaque un 30%, eliminar daños en tránsito y cumplir normativas TMEC/ISTA. Webinar gratuito con Fabián Valenzuela, Ivan Alcaraz, Sergio Taboada y Angel Pelgot. 14 de marzo 2026.',
+  'webinar.title': 'Serie de Webinars: Reduce Hasta un 30% en Costos de Empaque | SWAT Packaging',
+  'webinar.metaDesc': 'Serie de 4 webinars con expertos en empaque industrial. Aprende a reducir costos un 30%, eliminar daños en tránsito y cumplir normativas TMEC/ISTA. Cada viernes del 14 de marzo al 4 de abril 2026.',
   'webinar.badge': 'EN VIVO',
   'webinar.heroTitle': 'Reduce Hasta un 30% en Costos de Empaque Sin Sacrificar Calidad ni Cumplimiento',
-  'webinar.heroSubtitle': 'El método probado por 500+ empresas en la región CaliBaja. Aprende en 45 minutos cómo eliminamos desperdicio, prevenimos daños en tránsito y aseguramos cumplimiento TMEC/ISTA — con un solo proveedor cross-border. 14 de marzo | Zoom | Gratuito.',
-  'webinar.date': '14 de Marzo, 2026',
-  'webinar.time': '10:00 AM PST',
+  'webinar.heroSubtitle': 'Serie de 4 webinars semanales con los expertos de SWAT Packaging y Veritiv Landsberg. Cada viernes, un especialista diferente te enseña cómo optimizar costos, diseño, calidad y cumplimiento de tu empaque industrial. 14 de marzo al 4 de abril | Zoom | Gratuito.',
+  'webinar.date': '14 de Marzo - 4 de Abril, 2026',
+  'webinar.time': '10:00 AM PST · Cada Viernes',
   'webinar.platform': 'Zoom',
-  'webinar.registrationCloses': 'Registro cierra el 6 de marzo',
+  'webinar.registrationCloses': 'Registro cierra el 7 de marzo',
   'webinar.limitedSpots': 'Lugares limitados',
   'webinar.countdownDays': 'días',
   'webinar.countdownHours': 'horas',
@@ -612,14 +638,20 @@ export const es: Record<string, string> = {
   'webinar.pain4Solution': 'ISO 9001, ISO 13485, ISTA, EcoVadis Silver + documentación TMEC integrada en cada solución desde el día 1.',
 
   // webinar promise / learning modules
-  'webinar.promiseTag': 'Lo Que Aprenderás',
-  'webinar.promiseTitle': '3 Estrategias Que Transformarán Tu Empaque',
-  'webinar.module1Hook': '¿Por qué el 90% de las empresas manufactureras pierden $50K+ al año en empaque ineficiente?',
-  'webinar.module1Objective': 'Auditoría de costos ocultos y estrategia de reducción del 30%',
-  'webinar.module2Hook': 'El protocolo de protección que reduce daños en tránsito a cero — y que tus competidores ya usan',
-  'webinar.module2Objective': 'Protocolo de pruebas ISTA y diseño estructural anti-daño',
-  'webinar.module3Hook': 'Proveedor único cross-border: cómo empresas en CaliBaja redujeron costos logísticos un 20%',
-  'webinar.module3Objective': 'Cadena de suministro optimizada con proveedor único cross-border',
+  'webinar.promiseTag': 'Serie de 4 Sesiones',
+  'webinar.promiseTitle': '4 Sesiones Que Transformarán Tu Empaque',
+  'webinar.module1Hook': 'Sesión 1 — Viernes 14 de Marzo',
+  'webinar.module1Objective': 'Optimización de Costos y Auditoría Estratégica: Identifica costos ocultos en tu operación de empaque y construye una estrategia de reducción del 30%. Incluye la metodología de Auditoría Total Solutions con 8 áreas de evaluación en sitio.',
+  'webinar.module1Speaker': 'Fabián Valenzuela Loaiza',
+  'webinar.module2Hook': 'Sesión 2 — Viernes 21 de Marzo',
+  'webinar.module2Objective': 'Diseño Corrugado e Innovación Estructural: Ingeniería CAD avanzada con ArtiosCAD, selección de flautas (A, B, C, E), diseño estructural optimizado y reducción de huella de empaque un 20%.',
+  'webinar.module2Speaker': 'Ivan Alcaraz',
+  'webinar.module3Hook': 'Sesión 3 — Viernes 28 de Marzo',
+  'webinar.module3Objective': 'Diseño de Empaque e Innovación de Materiales: Diseño industrial centrado en el usuario, optimización de materiales, alternativas sustentables mono-material y soluciones innovadoras para reducir peso y desperdicio.',
+  'webinar.module3Speaker': 'Sergio Darío Taboada Romo de Vivar',
+  'webinar.module4Hook': 'Sesión 4 — Viernes 4 de Abril',
+  'webinar.module4Objective': 'Pruebas ISTA y Aseguramiento de Calidad: Protocolos de prueba certificados ISTA, validación de empaque médico, pruebas de rendimiento en laboratorio y eliminación de daños en tránsito hasta cero reclamos.',
+  'webinar.module4Speaker': 'Angel Pelgot',
 
   // webinar speakers
   'webinar.speakerTag': 'Tus Presentadores',
@@ -656,16 +688,20 @@ export const es: Record<string, string> = {
   'webinar.speaker4Specialty2': 'Validación empaque médico',
   'webinar.speaker4Specialty3': 'Pruebas de rendimiento',
   'webinar.speaker4Specialty4': 'Control de calidad',
+  'webinar.speaker1Session': 'Sesión 1 · 14 de Marzo',
+  'webinar.speaker2Session': 'Sesión 2 · 21 de Marzo',
+  'webinar.speaker3Session': 'Sesión 3 · 28 de Marzo',
+  'webinar.speaker4Session': 'Sesión 4 · 4 de Abril',
   'webinar.speakerSocialCompanies': '500+ empresas asesoradas',
   'webinar.speakerSocialCountries': 'EE.UU. y México',
-  'webinar.speakerSocialYears': '35+ años de experiencia combinada',
+  'webinar.speakerSocialYears': '60+ años de experiencia combinada',
 
   // webinar social proof
   'webinar.socialTag': 'Respaldados por la Industria',
   'webinar.socialTitle': 'La Experiencia de un Líder Global a Tu Servicio',
   'webinar.socialStat1': '500+',
   'webinar.socialStat1Label': 'Empresas asesoradas',
-  'webinar.socialStat2': '35+',
+  'webinar.socialStat2': '60+',
   'webinar.socialStat2Label': 'Años de experiencia combinada',
   'webinar.socialStat3': '2',
   'webinar.socialStat3Label': 'Países (EE.UU. y México)',
@@ -679,13 +715,24 @@ export const es: Record<string, string> = {
   'webinar.poweredBy': 'Una división de Veritiv Landsberg',
 
   // webinar bonus
-  'webinar.bonusTag': 'Regalo Sorpresa',
-  'webinar.bonusTitle': 'Auditoría Estratégica 360°',
-  'webinar.bonusValue': '$5,000 - $10,000 USD',
-  'webinar.bonusValueLabel': 'Valor',
-  'webinar.bonusDesc': 'Los asistentes que califiquen recibirán una Auditoría Estratégica 360° completa de su operación de empaque — el mismo diagnóstico que usamos con clientes enterprise.',
-  'webinar.bonusQualification': 'Calificación: Gasto mensual en empaque ≥$15,000 USD',
+  'webinar.bonusTag': 'Exclusivo para Asistentes',
+  'webinar.bonusTitle': 'Auditoría Total Solutions — Revisión de Proceso en Sitio',
+  'webinar.bonusValue': 'Exclusivo',
+  'webinar.bonusValueLabel': 'Para Asistentes',
+  'webinar.bonusDesc': 'Los asistentes que completen la serie recibirán una Revisión de Proceso Total Solutions en sitio. Nuestros ingenieros evalúan 8 áreas clave de tu operación de empaque para identificar oportunidades de mejora, priorizar acciones y crear un plan de ejecución con seguimiento de rendimiento.',
+  'webinar.bonusQualification': 'Disponible para empresas manufactureras en la región CaliBaja',
   'webinar.bonusCta': 'Reserva tu lugar ahora',
+  'webinar.bonusArea1': 'Reducción de Inventario (JIT/VMI)',
+  'webinar.bonusArea2': 'Mejora de Throughput',
+  'webinar.bonusArea3': 'Oportunidades de Automatización',
+  'webinar.bonusArea4': 'Innovación en Empaque',
+  'webinar.bonusArea5': 'Reducción de Material',
+  'webinar.bonusArea6': 'Reducción de Mano de Obra',
+  'webinar.bonusArea7': 'Impacto Ambiental',
+  'webinar.bonusArea8': 'Mejoras Ergonómicas',
+  'webinar.bonusDeliverable1': 'Identificación de oportunidades de mejora de costos con impacto cuantificado',
+  'webinar.bonusDeliverable2': 'Plan de priorización: acciones ordenadas por impacto y esfuerzo',
+  'webinar.bonusDeliverable3': 'Plan de ejecución con cronograma y seguimiento de rendimiento',
 
   // webinar bottom CTA
   'webinar.ctaTitle': 'No Dejes Que Tu Empaque Siga Costándote Miles',
