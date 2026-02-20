@@ -6,6 +6,7 @@ import WebinarAgenda from '../../components/sections/WebinarAgenda.astro';
 import WebinarSpeaker from '../../components/sections/WebinarSpeaker.astro';
 import WebinarSocialProof from '../../components/sections/WebinarSocialProof.astro';
 import WebinarBonus from '../../components/sections/WebinarBonus.astro';
+import WebinarSuccess from '../../components/sections/WebinarSuccess.astro';
 import Container from '../../components/ui/Container.astro';
 import type { Locale } from '../../i18n/config';
 import { t } from '../../i18n/utils';
@@ -79,6 +80,9 @@ const locale: Locale = 'en';
       {t(locale, 'webinar.ctaButton')}
     </a>
   </div>
+
+  <!-- Success modal (shown on ?registered=true) -->
+  <WebinarSuccess locale={locale} />
 </BaseLayout>
 
 <style>
