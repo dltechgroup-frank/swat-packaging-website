@@ -24,10 +24,14 @@ const certifications = [
 ];
 
 const logos = [
-  { name: 'Samsung', src: '/images/logos/samsung.png' },
-  { name: 'Veritiv', src: '/images/logos/veritiv.png' },
-  { name: 'Orora', src: '/images/logos/orora.png' },
-  { name: 'McCain', src: '/images/logos/mccain.png' },
+  { name: 'Nestlé', src: '/images/logos/nestle.svg' },
+  { name: 'DHL Express', src: '/images/logos/dhl.svg' },
+  { name: 'Disney', src: '/images/logos/disney.svg' },
+  { name: 'Volkswagen', src: '/images/logos/volkswagen.svg' },
+  { name: 'MARS', src: '/images/logos/mars.svg' },
+  { name: 'Maersk', src: '/images/logos/maersk.svg' },
+  { name: 'Cummins', src: '/images/logos/cummins.svg' },
+  { name: 'Campbell\'s', src: '/images/logos/campbells.svg' },
 ];
 ---
 
@@ -63,7 +67,7 @@ const logos = [
     </div>
 
     <!-- Client logos -->
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-10" data-animate>
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-8 lg:gap-10" data-animate>
       {logos.map((logo) => (
         <img
           src={logo.src}
