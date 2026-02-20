@@ -22,9 +22,22 @@ const industries = [
 ];
 
 const premierBrands = [
-  "Nestlé", "Campbell's", "MARS", "DHL Express", "Volkswagen",
-  "Disney", "JELD-WEN", "Maersk", "Stitch Fix", "Cummins",
-  "7-Eleven", "Aviall", "Blue Diamond", "Covetrus", "Circle K", "Toro",
+  { name: "Nestlé", logo: "/images/logos/nestle.svg" },
+  { name: "Campbell's", logo: "/images/logos/campbells.svg" },
+  { name: "MARS", logo: "/images/logos/mars.svg" },
+  { name: "DHL Express", logo: "/images/logos/dhl.svg" },
+  { name: "Volkswagen", logo: "/images/logos/volkswagen.svg" },
+  { name: "Disney", logo: "/images/logos/disney.svg" },
+  { name: "JELD-WEN", logo: "/images/logos/jeld-wen.svg" },
+  { name: "Maersk", logo: "/images/logos/maersk.svg" },
+  { name: "Stitch Fix", logo: "/images/logos/stitch-fix.png" },
+  { name: "Cummins", logo: "/images/logos/cummins.svg" },
+  { name: "7-Eleven", logo: "/images/logos/7-eleven.svg" },
+  { name: "Aviall", logo: "/images/logos/aviall.svg" },
+  { name: "Blue Diamond", logo: "/images/logos/blue-diamond.svg" },
+  { name: "Covetrus", logo: "/images/logos/covetrus.png" },
+  { name: "Circle K", logo: "/images/logos/circle-k.svg" },
+  { name: "Toro", logo: "/images/logos/toro.svg" },
 ];
 
 const challenges = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -140,11 +153,16 @@ const solutions = [1, 2, 3, 4];
         </p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-3" data-animate>
+      <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-6 items-center" data-animate>
         {premierBrands.map((brand) => (
-          <span class="px-4 py-2 bg-white/10 text-white/90 rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-colors duration-200">
-            {brand}
-          </span>
+          <div class="flex items-center justify-center p-3 bg-white/10 rounded-xl border border-white/10 hover:bg-white/20 transition-colors duration-200">
+            <img
+              src={brand.logo}
+              alt={brand.name}
+              class="h-8 w-auto max-w-[100px] object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+              loading="lazy"
+            />
+          </div>
         ))}
       </div>
     </Container>
