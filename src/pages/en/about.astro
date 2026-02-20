@@ -7,6 +7,9 @@ import Timeline from '../../components/sections/Timeline.astro';
 import RegionMap from '../../components/sections/RegionMap.astro';
 import TrustBar from '../../components/sections/TrustBar.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import GlobalNetwork from '../../components/sections/GlobalNetwork.astro';
+import CommunityInitiatives from '../../components/sections/CommunityInitiatives.astro';
+import Badge from '../../components/ui/Badge.astro';
 import type { Locale } from '../../i18n/config';
 import { t, localizeHref } from '../../i18n/utils';
 
@@ -75,6 +78,38 @@ const aboutStats = [
   <Timeline locale={locale} />
 
   <RegionMap locale={locale} />
+
+  <GlobalNetwork locale={locale} />
+
+  <!-- Fleet & Logistics -->
+  <section class="py-16 lg:py-20 bg-white">
+    <Container>
+      <div class="text-center mb-12" data-animate>
+        <Badge>{t(locale, 'about.fleetTag')}</Badge>
+        <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-veritiv-900">{t(locale, 'about.fleetTitle')}</h2>
+        <p class="mt-3 text-body-muted max-w-2xl mx-auto">{t(locale, 'about.fleetDesc')}</p>
+      </div>
+      <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" data-animate>
+        {[
+          { text: t(locale, 'about.fleetStat1'), icon: 'M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h17.25' },
+          { text: t(locale, 'about.fleetStat2'), icon: 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+          { text: t(locale, 'about.fleetStat3'), icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75z' },
+          { text: t(locale, 'about.fleetStat4'), icon: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' },
+          { text: t(locale, 'about.fleetStat5'), icon: 'M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871' },
+        ].map((stat) => (
+          <div class="text-center p-4 bg-surface-light rounded-xl border border-veritiv-100">
+            <svg class="w-6 h-6 text-accent-500 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d={stat.icon} />
+            </svg>
+            <p class="text-xs text-veritiv-700 leading-relaxed">{stat.text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-center text-sm text-accent-500 font-medium" data-animate>{t(locale, 'about.fleetReach')}</p>
+    </Container>
+  </section>
+
+  <CommunityInitiatives locale={locale} />
 
   <TrustBar stats={aboutStats} />
 

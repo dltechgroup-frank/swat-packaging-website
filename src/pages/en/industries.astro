@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Container from '../../components/ui/Container.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+
+const locale: Locale = 'en';
+
+const industries = [
+  { n: 1, icon: 'building' },
+  { n: 2, icon: 'utensils' },
+  { n: 3, icon: 'shopping-cart' },
+  { n: 4, icon: 'heart' },
+  { n: 5, icon: 'truck' },
+  { n: 6, icon: 'car' },
+  { n: 7, icon: 'plane' },
+  { n: 8, icon: 'factory' },
+  { n: 9, icon: 'store' },
+  { n: 10, icon: 'cpu' },
+];
+
+const premierBrands = [
+  "Nestlé", "Campbell's", "MARS", "DHL Express", "Volkswagen",
+  "Disney", "JELD-WEN", "Maersk", "Stitch Fix", "Cummins",
+  "7-Eleven", "Aviall", "Blue Diamond", "Covetrus", "Circle K", "Toro",
+];
+
+const challenges = [1, 2, 3, 4, 5, 6, 7, 8];
+const solutions = [1, 2, 3, 4];
+---
+
+<BaseLayout
+  title={t(locale, 'industries.title')}
+  description={t(locale, 'industries.metaDesc')}
+  locale={locale}
+>
+  <Hero
+    title={t(locale, 'industries.heroTitle')}
+    subtitle={t(locale, 'industries.heroSubtitle')}
+    image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80"
+    compact
+  />
+
+  <!-- Industry Verticals -->
+  <section class="py-20 lg:py-28 bg-white">
+    <Container>
+      <div class="text-center mb-12" data-animate>
+        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
+          {t(locale, 'industries.verticalsTag')}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-veritiv-900 tracking-tight">
+          {t(locale, 'industries.verticalsTitle')}
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {industries.map(({ n, icon }) => (
+          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 border-t-2 border-accent-500 p-5" data-animate>
+            <div class="w-10 h-10 rounded-full bg-accent-50 flex items-center justify-center mb-3">
+              {icon === 'building' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              )}
+              {icon === 'utensils' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              )}
+              {icon === 'shopping-cart' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+              )}
+              {icon === 'heart' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )}
+              {icon === 'truck' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                </svg>
+              )}
+              {icon === 'car' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8m-8 5h8M5 21l1-4H4l2-6h12l2 6h-2l1 4m-4 0H8" />
+                </svg>
+              )}
+              {icon === 'plane' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              )}
+              {icon === 'factory' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V9l-7 4V9l-7 4v8m14 0H5m14 0a2 2 0 002-2V9m-2 12H5a2 2 0 01-2-2V9m2 12V5a2 2 0 012-2h6a2 2 0 012 2v4" />
+                </svg>
+              )}
+              {icon === 'store' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              )}
+              {icon === 'cpu' && (
+                <svg class="w-5 h-5 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3H7a2 2 0 00-2 2v2M9 3h6M9 3v2m6-2h2a2 2 0 012 2v2m-4-4v2M3 9v6m18-6v6M9 21H7a2 2 0 01-2-2v-2m4 4h6m-6 0v-2m6 2h2a2 2 0 002-2v-2m-4 4v-2M9 9h6v6H9V9z" />
+                </svg>
+              )}
+            </div>
+            <h3 class="font-semibold text-veritiv-900 text-sm mb-1">
+              {t(locale, `industries.ind${n}Title`)}
+            </h3>
+            <p class="text-xs text-body-muted leading-relaxed mb-2">
+              {t(locale, `industries.ind${n}Desc`)}
+            </p>
+            <p class="text-xs text-veritiv-400 italic">
+              {t(locale, `industries.ind${n}Brands`)}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Premier Brands -->
+  <section class="py-20 lg:py-28 bg-veritiv-900 text-white">
+    <Container>
+      <div class="text-center mb-12" data-animate>
+        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-500/20 text-accent-400 mb-4">
+          {t(locale, 'industries.brandsTag')}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          {t(locale, 'industries.brandsTitle')}
+        </h2>
+        <p class="mt-4 text-veritiv-300 max-w-2xl mx-auto leading-relaxed">
+          {t(locale, 'industries.brandsSubtitle')}
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3" data-animate>
+        {premierBrands.map((brand) => (
+          <span class="px-4 py-2 bg-white/10 text-white/90 rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-colors duration-200">
+            {brand}
+          </span>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Enterprise Solutions -->
+  <section class="py-20 lg:py-28 bg-surface-light">
+    <Container>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <!-- Challenges -->
+        <div data-animate>
+          <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
+            {t(locale, 'industries.challengeTag')}
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-veritiv-900 tracking-tight mb-8">
+            {t(locale, 'industries.challengeTitle')}
+          </h2>
+          <ul class="space-y-3">
+            {challenges.map((n) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span class="text-body-muted text-sm leading-relaxed">
+                  {t(locale, `industries.challenge${n}`)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Solutions -->
+        <div data-animate>
+          <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-veritiv-50 text-veritiv-600 mb-4">
+            {t(locale, 'industries.solutionTag')}
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-veritiv-900 tracking-tight mb-8">
+            {t(locale, 'industries.solutionTitle')}
+          </h2>
+          <ul class="space-y-4">
+            {solutions.map((n) => (
+              <li class="flex items-start gap-3 bg-white rounded-xl p-4 border border-veritiv-100">
+                <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-body-muted text-sm leading-relaxed">
+                  {t(locale, `industries.solution${n}`)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <CtaBanner
+    title={t(locale, 'common.ctaDefaultTitle')}
+    description={t(locale, 'common.ctaDefaultDescription')}
+    buttonText={t(locale, 'common.ctaDefaultButton')}
+    buttonHref={localizeHref(locale, '/audit')}
+  />
+</BaseLayout>

@@ -5,6 +5,7 @@ import Container from '../../components/ui/Container.astro';
 import SectorShowcase from '../../components/sections/SectorShowcase.astro';
 import ServiceDetail from '../../components/sections/ServiceDetail.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import DesignProcess from '../../components/sections/DesignProcess.astro';
 import type { Locale } from '../../i18n/config';
 import { t, localizeHref } from '../../i18n/utils';
 import { getServices } from '../../data/services';
@@ -39,6 +40,8 @@ const services = getServices(locale);
       </nav>
     </Container>
   </section>
+
+  <DesignProcess locale={locale} />
 
   <SectorShowcase locale={locale} />
 

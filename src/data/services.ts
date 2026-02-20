@@ -198,6 +198,11 @@ export function getServices(locale: Locale): Service[] {
     { slug: 'automated-kitting', key: 'automatedKitting', icon: 'automation', badge: 'Industry 4.0', sectors: ['electronics', 'automotive'], image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?auto=format&fit=crop&w=800&q=80' }, // Industrial automation
     { slug: 'corrugated-solutions', key: 'corrugatedSolutions', icon: 'corrugated', badge: 'Custom Design', sectors: ['medical', 'electronics', 'automotive', 'retail', 'pharmaceutical'], image: 'https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=800&q=80' }, // Cardboard boxes
     { slug: 'flexible-packaging', key: 'flexiblePkg', icon: 'flexible', badge: 'Industrial Grade', sectors: ['electronics', 'automotive', 'retail', 'pharmaceutical'], image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80' }, // Packaging materials
+    { slug: 'custom-packaging', key: 'customPackaging', icon: 'gift', badge: '36 Design Centers', sectors: ['medical', 'electronics', 'retail'], image: 'https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=800&q=80' }, // Custom packaging design
+    { slug: 'visual-communications', key: 'visualComm', icon: 'eye', sectors: ['retail', 'automotive'], image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80' }, // Visual branding
+    { slug: 'equipment-automation', key: 'equipmentAuto', icon: 'cog', badge: 'Full Line Integration', sectors: ['automotive', 'electronics', 'medical'], image: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=800&q=80' }, // Industrial equipment
+    { slug: 'consultive-services', key: 'consultiveServices', icon: 'clipboard', sectors: ['medical', 'automotive', 'electronics', 'retail'], image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80' }, // Business consulting
+    { slug: 'facility-solutions', key: 'facilitySolutions', icon: 'building', sectors: ['medical', 'retail'], image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80' }, // Facility management
   ];
 
   return keys.map(({ slug, key, icon, badge, sectors, image }) => ({

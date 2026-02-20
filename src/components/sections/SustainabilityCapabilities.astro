@@ -1,0 +1,146 @@
+---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+
+// Part A: Capabilities table — 3 columns × 5 rows
+const capColumns = [
+  {
+    header: t(locale, 'sustainability.capEnvHeader'),
+    items: [
+      t(locale, 'sustainability.capEnv1'),
+      t(locale, 'sustainability.capEnv2'),
+      t(locale, 'sustainability.capEnv3'),
+      t(locale, 'sustainability.capEnv4'),
+      t(locale, 'sustainability.capEnv5'),
+    ],
+  },
+  {
+    header: t(locale, 'sustainability.capQualHeader'),
+    items: [
+      t(locale, 'sustainability.capQual1'),
+      t(locale, 'sustainability.capQual2'),
+      t(locale, 'sustainability.capQual3'),
+      t(locale, 'sustainability.capQual4'),
+      t(locale, 'sustainability.capQual5'),
+    ],
+  },
+  {
+    header: t(locale, 'sustainability.capCompHeader'),
+    items: [
+      t(locale, 'sustainability.capComp1'),
+      t(locale, 'sustainability.capComp2'),
+      t(locale, 'sustainability.capComp3'),
+      t(locale, 'sustainability.capComp4'),
+      t(locale, 'sustainability.capComp5'),
+    ],
+  },
+];
+
+// Part B: Sustainable products — 7 areas
+const productAreas = [
+  { title: t(locale, 'sustainability.prodDesignTitle'), items: t(locale, 'sustainability.prodDesignItems') },
+  { title: t(locale, 'sustainability.prodMaterialsTitle'), items: t(locale, 'sustainability.prodMaterialsItems') },
+  { title: t(locale, 'sustainability.prodCITitle'), items: t(locale, 'sustainability.prodCIItems') },
+  { title: t(locale, 'sustainability.prodLogisticsTitle'), items: t(locale, 'sustainability.prodLogisticsItems') },
+  { title: t(locale, 'sustainability.prodTestingTitle'), items: t(locale, 'sustainability.prodTestingItems') },
+  { title: t(locale, 'sustainability.prodLCATitle'), items: t(locale, 'sustainability.prodLCAItems') },
+  { title: t(locale, 'sustainability.prodOpsTitle'), items: t(locale, 'sustainability.prodOpsItems') },
+];
+---
+
+<section class="py-20 lg:py-28 bg-white">
+  <Container>
+
+    <!-- ── Part A: Capabilities Table ── -->
+    <div class="mb-20">
+      <div class="text-center mb-12" data-animate>
+        <Badge text={t(locale, 'sustainability.capTag')} variant="teal" />
+        <h2 class="mt-4 text-3xl sm:text-4xl font-bold text-veritiv-900 tracking-tight">
+          {t(locale, 'sustainability.capTitle')}
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-animate>
+        {capColumns.map((col) => (
+          <div class="rounded-xl border border-veritiv-100 overflow-hidden">
+            <!-- Column header -->
+            <div class="bg-veritiv-900 px-5 py-3">
+              <h3 class="text-sm font-semibold text-white uppercase tracking-wider">{col.header}</h3>
+            </div>
+            <!-- Item rows -->
+            <ul class="divide-y divide-veritiv-100">
+              {col.items.map((item) => (
+                <li class="flex items-start gap-3 px-5 py-3.5">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-500 flex-shrink-0"></span>
+                  <span class="text-sm text-body-muted leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── Part B: Sustainable Products & Services ── -->
+    <div>
+      <div class="text-center mb-12" data-animate>
+        <Badge text={t(locale, 'sustainability.prodTag')} variant="green" />
+        <h2 class="mt-4 text-3xl sm:text-4xl font-bold text-veritiv-900 tracking-tight">
+          {t(locale, 'sustainability.prodTitle')}
+        </h2>
+      </div>
+
+      <!--
+        7 cards across 4-column grid.
+        Row 1: indices 0-3 (4 cards, fills 4 cols).
+        Row 2: indices 4-6 (3 cards). Center them by starting at col 1 (lg:col-start-1 leaves natural flow,
+        but we wrap the last 3 in a sub-grid centered with mx-auto).
+      -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5" data-animate>
+        {productAreas.slice(0, 4).map((area) => (
+          <div class="bg-surface-light rounded-xl p-5 border border-veritiv-100">
+            <h3 class="text-xs font-bold text-veritiv-900 uppercase tracking-wide mb-3">
+              {area.title}
+            </h3>
+            <ul class="space-y-1.5">
+              {area.items.split(' · ').map((item: string) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-accent-500 flex-shrink-0"></span>
+                  <span class="text-xs text-body-muted leading-snug">{item.trim()}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Last row: 3 cards, centered in the 4-col grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:w-3/4 lg:mx-auto" data-animate>
+        {productAreas.slice(4).map((area) => (
+          <div class="bg-surface-light rounded-xl p-5 border border-veritiv-100">
+            <h3 class="text-xs font-bold text-veritiv-900 uppercase tracking-wide mb-3">
+              {area.title}
+            </h3>
+            <ul class="space-y-1.5">
+              {area.items.split(' · ').map((item: string) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-accent-500 flex-shrink-0"></span>
+                  <span class="text-xs text-body-muted leading-snug">{item.trim()}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </Container>
+</section>

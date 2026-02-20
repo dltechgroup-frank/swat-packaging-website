@@ -23,9 +23,9 @@ export const nearshoreStats: Stat[] = [
 
 export function getTrustStats(locale: Locale): Stat[] {
   return [
-    { value: '30', suffix: '+', label: t(locale, 'stats.trustYearsLabel') },
-    { value: '2', label: t(locale, 'stats.trustCountriesLabel') },
-    { value: '8', label: t(locale, 'stats.trustSolutionsLabel') },
+    { value: '75', suffix: '+', label: t(locale, 'stats.trustYearsLabel') },
+    { value: '162', label: t(locale, 'stats.trustLocationsLabel') },
+    { value: '36', label: t(locale, 'stats.trustDesignLabel') },
     { value: 'ISO', label: t(locale, 'stats.trustIsoLabel') },
   ];
 }
