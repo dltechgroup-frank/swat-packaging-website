@@ -571,7 +571,7 @@ export const en: Record<string, string> = {
   'webinar.speaker3Specialty4': 'User-centered design',
   'webinar.speaker4Name': 'José Luis Castro',
   'webinar.speaker4Role': 'Director of Operations — Androp Packaging',
-  'webinar.speaker4Bio': 'As Director of Operations at Androp Packaging, José Luis leads the design, manufacturing, and assembly of packaging solutions in corrugated, polyethylene foam, and plastic corrugated. With operations in Tijuana and Ontario, CA, his expertise spans prototyping, technical assistance, and packing line optimization for high-volume manufacturing.',
+  'webinar.speaker4Bio': 'An ITESM (Tec de Monterrey) graduate, José Luis is Director of Operations at Androp Packaging, where he leads the design, manufacturing, and assembly of packaging solutions in corrugated, polyethylene foam, and plastic corrugated. With operations in Tijuana and Ontario, CA, his expertise spans prototyping, technical assistance, and packing line optimization for high-volume manufacturing.',
   'webinar.speaker4Experience': 'Director of Operations',
   'webinar.speaker4Specialty1': 'Manufacturing operations',
   'webinar.speaker4Specialty2': 'Corrugated & PE foam design',
