@@ -463,7 +463,7 @@ export const en: Record<string, string> = {
   'webinar.startsLabel': 'Starts',
   'webinar.startDate': 'Friday, April 17, 2026',
   'webinar.startTime': '10:00 AM PST · Via Zoom',
-  'webinar.registrationCloses': 'Registration closes March 14',
+  'webinar.registrationCloses': 'Registration closes April 10',
   'webinar.limitedSpots': 'Limited spots available',
   'webinar.countdownDays': 'days',
   'webinar.countdownHours': 'hours',
