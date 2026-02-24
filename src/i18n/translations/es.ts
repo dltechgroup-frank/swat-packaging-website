@@ -74,7 +74,7 @@ export const es: Record<string, string> = {
     'SWAT Packaging opera en ambos lados de la frontera con 30 años de experiencia en ingeniería en el corredor Tijuana-San Diego. Diseñamos, probamos y entregamos soluciones de empaque que transitan sin problemas por los puntos de control del TMEC — para que tus productos lleguen al mercado más rápido, sin retrasos de cumplimiento.',
   'nearshore.stat1Label': 'Prototipo desde nuestra planta en Tijuana',
   'nearshore.stat2Label': 'Embalaje de exportación compatible con TMEC',
-  'nearshore.stat3Label': 'EE.UU., México y Canadá',
+  'nearshore.stat3Label': 'Cadena de suministro integrada transfronteriza',
   'nearshore.stat3Value': 'Naciones',
   'nearshore.sectorCallout':
     'Sirviendo a fabricantes de Dispositivos Médicos, Electrónica y Automotriz en Parque Industrial Pacífico, HubsPark Tech Campus y en las zonas industriales de Tijuana.',
@@ -696,7 +696,7 @@ export const es: Record<string, string> = {
   'webinar.speaker3Session': 'Sesión 4 · 15 de Mayo',
   'webinar.speaker4Session': 'Sesión 3 · 8 de Mayo',
   'webinar.speakerSocialCompanies': '500+ empresas asesoradas',
-  'webinar.speakerSocialCountries': 'EE.UU., México y Canadá',
+  'webinar.speakerSocialCountries': 'EE.UU. y México',
   'webinar.speakerSocialYears': '60+ años de experiencia combinada',
 
   // webinar social proof
@@ -706,8 +706,8 @@ export const es: Record<string, string> = {
   'webinar.socialStat1Label': 'Empresas asesoradas',
   'webinar.socialStat2': '60+',
   'webinar.socialStat2Label': 'Años de experiencia combinada',
-  'webinar.socialStat3': '3',
-  'webinar.socialStat3Label': 'Países (EE.UU., México y Canadá)',
+  'webinar.socialStat3': '2',
+  'webinar.socialStat3Label': 'Países (EE.UU. y México)',
   'webinar.socialStat4': '30%',
   'webinar.socialStat4Label': 'Reducción promedio de costos',
   'webinar.socialCert1': 'ISO 9001:2015',

@@ -58,7 +58,7 @@ export const en: Record<string, string> = {
   'nearshore.body2': 'SWAT Packaging operates on both sides of the border with 30 years of engineering expertise in the Tijuana-San Diego corridor. We design, test, and deliver packaging solutions that move seamlessly through USMCA checkpoints \u2014 so your products reach market faster, with zero compliance delays.',
   'nearshore.stat1Label': 'Prototype turnaround from our Tijuana facility',
   'nearshore.stat2Label': 'USMCA-compliant export crating',
-  'nearshore.stat3Label': 'US, Mexico & Canada',
+  'nearshore.stat3Label': 'Integrated supply chain across the border',
   'nearshore.stat3Value': 'Nations',
   'nearshore.sectorCallout': 'Serving Medical Device, Electronics, and Automotive manufacturers in Parque Industrial Pacifico, HubsPark Tech Campus, and across Tijuana\'s industrial zones.',
   'nearshore.formTitle': 'Get a Nearshoring Packaging Assessment',
@@ -582,7 +582,7 @@ export const en: Record<string, string> = {
   'webinar.speaker3Session': 'Session 4 · May 15',
   'webinar.speaker4Session': 'Session 3 · May 8',
   'webinar.speakerSocialCompanies': '500+ companies advised',
-  'webinar.speakerSocialCountries': 'US, Mexico & Canada',
+  'webinar.speakerSocialCountries': 'US & Mexico',
   'webinar.speakerSocialYears': '60+ combined years of experience',
 
   // webinar social proof
@@ -592,8 +592,8 @@ export const en: Record<string, string> = {
   'webinar.socialStat1Label': 'Companies advised',
   'webinar.socialStat2': '60+',
   'webinar.socialStat2Label': 'Combined years of experience',
-  'webinar.socialStat3': '3',
-  'webinar.socialStat3Label': 'Countries (US, Mexico & Canada)',
+  'webinar.socialStat3': '2',
+  'webinar.socialStat3Label': 'Countries (US & Mexico)',
   'webinar.socialStat4': '30%',
   'webinar.socialStat4Label': 'Average cost reduction',
   'webinar.socialCert1': 'ISO 9001:2015',
