@@ -405,6 +405,10 @@ export const en: Record<string, string> = {
   'carousel.slide5.title': 'Smart Packaging with <span class="text-accent-400">QR & RFID</span>',
   'carousel.slide5.subtitle': 'Industry 4.0 labeling and asset tracking systems that provide real-time visibility and combat the 29% spike in cargo theft.',
   'carousel.slide5.cta': 'Discover Smart Labeling',
+  'carousel.slide6.tag': 'Free Webinar Series',
+  'carousel.slide6.title': 'Intelligent Packaging for <span class="text-accent-400">Manufacturing and E-commerce</span>',
+  'carousel.slide6.subtitle': 'Reduce costs, damage, and rework in 2026. 4 weekly sessions with Veritiv Landsberg experts. April 17 to May 15, free on Zoom.',
+  'carousel.slide6.cta': 'Register Now',
 
   // waste reduction chart
   'chart.wasteTitle': 'Packaging Waste Reduction',
@@ -455,7 +459,7 @@ export const en: Record<string, string> = {
   'webinar.title': 'Intelligent Packaging for Manufacturing and E-commerce | SWAT Packaging',
   'webinar.metaDesc': '4-part webinar series: Intelligent Packaging for Manufacturing and E-commerce. Reduce costs, damage, and rework in your industrial packaging with smart strategies. Every Friday from April 17 to May 15, 2026.',
   'webinar.badge': 'LIVE',
-  'webinar.heroTitle': 'Intelligent Packaging for Manufacturing and E-commerce',
+  'webinar.heroTitle': 'Intelligent Packaging for <span class="hero-accent">Manufacturing and E-commerce</span>',
   'webinar.heroSubtitle': 'Reduce Costs, Damage, and Rework in 2026. 4-part weekly webinar series with SWAT Packaging and Veritiv Landsberg experts. April 17 to May 15 | Zoom | Free.',
   'webinar.date': 'April 17 - May 15, 2026',
   'webinar.time': '10:00 AM PST · Every Friday',

@@ -56,6 +56,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Webinar hero accent text */
+.hero-accent {
+  display: block;
+  color: #1AB872;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-top: 0.25rem;
+}
+
 /* Base typography */
 body {
   color: var(--color-body);
