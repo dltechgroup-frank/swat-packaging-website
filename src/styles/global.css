@@ -60,7 +60,7 @@ html {
 .hero-accent {
   display: block;
   color: #1AB872;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.8rem);
   line-height: 1.05;
   text-transform: uppercase;
   letter-spacing: -0.02em;
