@@ -18,17 +18,17 @@ const locale: Locale = 'en';
 const trustStats = getTrustStats(locale);
 
 const heroImages = [
+  '/images/webinar-hero-banner.jpg', // Webinar promo banner
   'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80', // Cardboard boxes warehouse
   'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80', // Shipping containers port
   'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1920&q=80', // Recycling cardboard
   'https://images.unsplash.com/photo-1616432043562-3671ea2e5242?auto=format&fit=crop&w=1920&q=80', // Industrial warehouse pallets
   'https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1920&q=80', // Warehouse barcode scanning
-  'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1920&q=80', // Industrial automation webinar
 ];
 
-const slideLinks = ['/audit', '/audit', '/audit', '/audit', '/audit', '/webinar'];
+const slideLinks = ['/webinar', '/audit', '/audit', '/audit', '/audit', '/audit'];
 
-const carouselSlides = [1, 2, 3, 4, 5, 6].map((n, i) => ({
+const carouselSlides = [6, 1, 2, 3, 4, 5].map((n, i) => ({
   tag: t(locale, `carousel.slide${n}.tag`),
   title: t(locale, `carousel.slide${n}.title`),
   subtitle: t(locale, `carousel.slide${n}.subtitle`),
