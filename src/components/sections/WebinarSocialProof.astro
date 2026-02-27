@@ -16,12 +16,15 @@ const stats = [
   { value: t(locale, 'webinar.socialStat2'), label: t(locale, 'webinar.socialStat2Label') },
   { value: t(locale, 'webinar.socialStat3'), label: t(locale, 'webinar.socialStat3Label') },
   { value: t(locale, 'webinar.socialStat4'), label: t(locale, 'webinar.socialStat4Label') },
+  { value: t(locale, 'webinar.socialStat5'), label: t(locale, 'webinar.socialStat5Label') },
 ];
 
 const certifications = [
   t(locale, 'webinar.socialCert1'),
   t(locale, 'webinar.socialCert2'),
   t(locale, 'webinar.socialCert3'),
+  t(locale, 'webinar.socialCert4'),
+  t(locale, 'webinar.socialCert5'),
 ];
 
 const logos = [
@@ -122,7 +125,7 @@ const row2 = logos.slice(midpoint);
     </div>
 
     <!-- Stats row -->
-    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 mb-10" data-animate>
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-10" data-animate>
       {stats.map((stat) => (
         <div class="text-center">
           <div class="text-3xl lg:text-4xl font-bold text-accent-500">{stat.value}</div>
