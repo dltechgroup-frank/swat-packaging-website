@@ -43,6 +43,20 @@ const countdownLabels = {
           {t(locale, 'webinar.heroSubtitle')}
         </p>
 
+        <!-- Webinar intro video -->
+        <div class="video-wrapper group mt-8 aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 relative">
+          <video
+            src="/videos/webinar_intro.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            preload="metadata"
+            class="w-full h-full object-cover"
+          ></video>
+        </div>
+
         <!-- Event details row -->
         <div class="flex flex-wrap items-center gap-4 mt-8 text-sm" style="color: #A5C2C9;">
           <div class="flex items-center gap-2">
