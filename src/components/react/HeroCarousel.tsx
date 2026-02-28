@@ -88,7 +88,7 @@ export default function HeroCarousel({ slides, interval = 6000 }: Props) {
 
   return (
     <section
-      className="relative overflow-hidden py-24 lg:py-36"
+      className="relative overflow-hidden py-10 lg:py-36"
       style={{ backgroundColor: "#00313C" }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
