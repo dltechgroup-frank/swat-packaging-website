@@ -573,7 +573,7 @@ export const es: Record<string, string> = {
   'webinar.title': 'Empaque Inteligente para Manufactura y E-commerce | SWAT Packaging',
   'webinar.metaDesc': 'Serie de 4 webinars: Empaque Inteligente para Manufactura y E-commerce. Reduce costos, danos y retrabajo en tu empaque industrial con estrategias inteligentes. Cada viernes del 17 de abril al 15 de mayo 2026.',
   'webinar.badge': 'EN VIVO',
-  'webinar.heroTitle': 'Empaque Inteligente para <span class="hero-accent">Manufactura y E-commerce</span>',
+  'webinar.heroTitle': 'Webinar: Empaque Inteligente para <span class="hero-accent">Manufactura y E-commerce</span>',
   'webinar.heroSubtitle': 'Reduce Costos, Danos y Retrabajo en 2026. Serie de 4 webinars semanales con los expertos de SWAT Packaging y Veritiv Landsberg. 17 de abril al 15 de mayo | Zoom | Gratuito.',
   'webinar.date': '17 de Abril - 15 de Mayo, 2026',
   'webinar.time': '10:00 AM PST · Cada Viernes',
