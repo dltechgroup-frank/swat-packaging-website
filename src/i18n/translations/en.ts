@@ -406,7 +406,7 @@ export const en: Record<string, string> = {
   'carousel.slide5.subtitle': 'Industry 4.0 labeling and asset tracking systems that provide real-time visibility and combat the 29% spike in cargo theft.',
   'carousel.slide5.cta': 'Discover Smart Labeling',
   'carousel.slide6.tag': 'Free Webinar Series',
-  'carousel.slide6.title': 'Intelligent Packaging for <span class="text-accent-400">Manufacturing and E-commerce</span>',
+  'carousel.slide6.title': 'Webinar: Intelligent Packaging for <span class="text-accent-400">Manufacturing and E-commerce</span>',
   'carousel.slide6.subtitle': 'Reduce costs, damage, and rework in 2026. 4 weekly sessions with Veritiv Landsberg experts. April 17 to May 15, free on Zoom.',
   'carousel.slide6.cta': 'Register Now',
 
@@ -540,10 +540,10 @@ export const en: Record<string, string> = {
   'webinar.module2Objective': 'ISTA Testing & Quality Assurance: Certified ISTA testing protocols, medical packaging validation, lab performance testing, and eliminating transit damage to zero claims.',
   'webinar.module2Speaker': 'Angel Pelgot',
   'webinar.module3Hook': 'Session 3 — Friday May 8',
-  'webinar.module3Objective': 'Packaging Manufacturing & Operations: High-volume production line optimization, corrugated and PE foam design, rapid prototyping, and operational strategies for Tijuana-USA cross-border supply chain.',
+  'webinar.module3Objective': 'Internal Foam Packaging, Recycled Materials: Internal packaging solutions with polyethylene foam and recycled materials, protective insert design, cushioning optimization, and reuse strategies to reduce waste.',
   'webinar.module3Speaker': 'José Luis Castro',
   'webinar.module4Hook': 'Session 4 — Friday May 15',
-  'webinar.module4Objective': 'Packaging Design & Material Innovation: User-centered industrial design, material optimization, sustainable mono-material alternatives, and innovative solutions to reduce weight and waste.',
+  'webinar.module4Objective': 'Internal Paper Packaging, 100% Sustainable: Paper and recycled cardboard interior packaging alternatives, 100% sustainable mono-material solutions, plastic-free interiors, and design for circular economy.',
   'webinar.module4Speaker': 'Sergio Darío Taboada Romo de Vivar',
 
   // webinar speakers

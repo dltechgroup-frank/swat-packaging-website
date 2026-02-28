@@ -112,7 +112,7 @@ export default function HeroCarousel({ slides, interval = 6000 }: Props) {
             {/* Dark overlay for text readability */}
             <div
               className="absolute inset-0"
-              style={{ backgroundColor: "rgba(0, 49, 60, 0.7)" }}
+              style={{ background: "linear-gradient(to right, rgba(0,49,60,0.92) 0%, rgba(0,49,60,0.75) 50%, rgba(0,49,60,0.3) 100%)" }}
             />
           </motion.div>
         )}

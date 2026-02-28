@@ -520,7 +520,7 @@ export const es: Record<string, string> = {
   'carousel.slide5.subtitle': 'Sistemas de etiquetado y rastreo de activos Industria 4.0 que brindan visibilidad en tiempo real y combaten el incremento del 29% en robo de carga.',
   'carousel.slide5.cta': 'Descubre Etiquetado Inteligente',
   'carousel.slide6.tag': 'Serie de Webinars Gratuita',
-  'carousel.slide6.title': 'Empaque Inteligente para <span class="text-accent-400">Manufactura y E-commerce</span>',
+  'carousel.slide6.title': 'Webinar: Empaque Inteligente para <span class="text-accent-400">Manufactura y E-commerce</span>',
   'carousel.slide6.subtitle': 'Reduce costos, danos y retrabajo en 2026. 4 sesiones semanales con expertos de Veritiv Landsberg. 17 de abril al 15 de mayo, gratis por Zoom.',
   'carousel.slide6.cta': 'Registrate Ahora',
 
@@ -654,10 +654,10 @@ export const es: Record<string, string> = {
   'webinar.module2Objective': 'Pruebas ISTA y Aseguramiento de Calidad: Protocolos de prueba certificados ISTA, validación de empaque médico, pruebas de rendimiento en laboratorio y eliminación de daños en tránsito hasta cero reclamos.',
   'webinar.module2Speaker': 'Angel Pelgot',
   'webinar.module3Hook': 'Sesión 3 — Viernes 8 de Mayo',
-  'webinar.module3Objective': 'Manufactura y Operaciones de Empaque: Optimización de líneas de producción de alto volumen, diseño con corrugado y espuma PE, prototipado rápido y estrategias operativas para cadena de suministro transfronteriza Tijuana-USA.',
+  'webinar.module3Objective': 'Empaque Interno de Foam, Material Reciclado: Soluciones de empaque interno con espuma de polietileno y materiales reciclados, diseño de interiores protectores, optimización de amortiguamiento y estrategias de reutilización para reducir desperdicio.',
   'webinar.module3Speaker': 'José Luis Castro',
   'webinar.module4Hook': 'Sesión 4 — Viernes 15 de Mayo',
-  'webinar.module4Objective': 'Diseño de Empaque e Innovación de Materiales: Diseño industrial centrado en el usuario, optimización de materiales, alternativas sustentables mono-material y soluciones innovadoras para reducir peso y desperdicio.',
+  'webinar.module4Objective': 'Empaque Interno de Papel 100% Sustentable: Alternativas de empaque interior en papel y cartón reciclado, soluciones mono-material 100% sustentables, eliminación de plásticos en interiores y diseño para economía circular.',
   'webinar.module4Speaker': 'Sergio Darío Taboada Romo de Vivar',
 
   // webinar speakers
