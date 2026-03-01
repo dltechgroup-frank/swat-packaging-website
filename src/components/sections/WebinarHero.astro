@@ -22,7 +22,10 @@ const countdownLabels = {
 <section class="relative overflow-hidden py-10 lg:py-36" style="background-color: #00313C;">
   <!-- Background image with gradient fade -->
   <div class="absolute inset-0" aria-hidden="true">
-    <img src="/images/webinar_hero.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+    <!-- Mobile: Fabian background -->
+    <img src="/images/fabian_background.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover lg:hidden" loading="eager" />
+    <!-- Desktop: Speakers group -->
+    <img src="/images/webinar_hero.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover hidden lg:block" loading="eager" />
     <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,49,60,0.92) 0%, rgba(0,49,60,0.75) 50%, rgba(0,49,60,0.3) 100%);"></div>
   </div>
 
