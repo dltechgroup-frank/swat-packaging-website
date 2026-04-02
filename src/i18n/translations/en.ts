@@ -512,7 +512,8 @@ export const en: Record<string, string> = {
   'webinar.optionOperation8': 'Food & Beverage',
   'webinar.optionOperation9': 'Other',
   'webinar.submitButton': 'Register Now',
-  'webinar.formUrgency': 'Only 47 spots remaining',
+  'webinar.formUrgency': 'Limited spots - Last chance before April 17',
+  'webinar.formSocialProof': '500+ projects | 30% cost reduction | ISO 9001 certified',
 
   // webinar pain points — Traditional Approach vs. SWAT Method
   'webinar.painTag': 'Traditional Approach vs. SWAT Method',
