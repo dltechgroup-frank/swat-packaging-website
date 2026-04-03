@@ -170,7 +170,12 @@ const { locale = 'es', id = 'webinar-form' } = Astro.props;
   document.addEventListener('DOMContentLoaded', function() {
     const webinarForm = document.querySelector('form[action*="web3forms"]');
     if (webinarForm) {
-      webinarForm.addEventListener('submit', function() {
+      webinarForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = e.target;
+        var formData = new FormData(form);
+
+        // Fire tracking pixels immediately
         if (typeof gtag !== 'undefined') {
           gtag('event', 'generate_lead', {
             'event_category': 'conversion',
@@ -190,6 +195,33 @@ const { locale = 'es', id = 'webinar-form' } = Astro.props;
         if (typeof lintrk !== 'undefined') {
           lintrk('track', { conversion_id: 26863482 });
         }
+
+        // Submit to Web3Forms via fetch
+        fetch(form.action, { method: 'POST', body: formData })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            // Fire LinkedIn CAPI server-side conversion
+            var email = formData.get('email');
+            var name = formData.get('name');
+            var company = formData.get('company');
+            if (email) {
+              fetch('https://n8n.dltechgroup.com/track/webhook/linkedin-capi', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, name: name, company: company })
+              }).catch(function() {});
+            }
+
+            // Redirect to success page
+            var redirect = form.querySelector('input[name="redirect"]');
+            if (redirect && redirect.value) {
+              window.location.href = redirect.value;
+            }
+          })
+          .catch(function() {
+            // Fallback: submit normally if fetch fails
+            form.submit();
+          });
       });
     }
   });
