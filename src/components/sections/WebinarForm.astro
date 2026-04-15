@@ -21,14 +21,17 @@ const { locale = 'es', id = 'webinar-form' } = Astro.props;
 
   <form id="webinar-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
     <input type="hidden" name="access_key" value="f77e8c5b-d7fc-4cb8-9407-501764aa50ad" />
-    <input type="hidden" name="subject" value="Nueva Registro Webinar - Packaging Inteligente 2026" />
-    <input type="hidden" name="from_name" value="SWAT Packaging Webinar" />
+    <input type="hidden" name="subject" value="Nuevo Registro Webinar SWAT - Packaging Inteligente 2026" />
+    <input type="hidden" name="from_name" value="Fabián Valenzuela | SWAT Packaging" />
+    <input type="hidden" name="email" value="fabian.valenzuela@veritiv.com" />
+    <input type="hidden" name="reply_to" value="fabian.valenzuela@veritiv.com" />
     <input type="hidden" name="source" value="webinar-landing-page" />
     <input type="hidden" name="redirect" value="https://swatpackagingteam.mx/webinar?registered=true" />
     <input type="hidden" name="autoresponse" value="true" />
-    <input type="hidden" name="autoresponse_from" value="SWAT Packaging Team" />
+    <input type="hidden" name="autoresponse_from" value="Fabián Valenzuela | SWAT Packaging" />
+    <input type="hidden" name="autoresponse_reply_to" value="fabian.valenzuela@veritiv.com" />
     <input type="hidden" name="autoresponse_subject" value="✅ ¡Registro Confirmado! Serie de Webinars — Packaging Inteligente 2026" />
-    <input type="hidden" name="autoresponse_message" value="¡Hola! Gracias por registrarte a la Serie de Webinars 'Reduce Hasta un 30% en Costos de Empaque'.&#10;&#10;📅 Serie de 4 sesiones: Todos los viernes, 17 de abril al 15 de mayo, 2026&#10;🕐 Hora: 10:00 AM PST&#10;💻 Plataforma: Zoom&#10;🔗 Link de acceso: Te lo enviaremos antes de cada sesión&#10;&#10;Calendario de sesiones:&#10;• Sesión 1 (17 abr): Diseño Corrugado e Innovación Estructural — Ivan Alcaraz&#10;• Sesión 2 (24 abr): Pruebas ISTA y Aseguramiento de Calidad — Angel Pelgot&#10;• Sesión 3 (8 may): Empaque Interno de Foam, Material Reciclado — José Luis Castro&#10;• Sesión 4 (15 may): Empaque Interno de Papel 100% Sustentable — Sergio Darío Taboada&#10;&#10;📆 Agrega las sesiones a tu calendario:&#10;• Sesión 1: https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Webinar+SWAT:+Dise%C3%B1o+Corrugado+-+Ivan+Alcaraz&amp;dates=20260417T170000Z/20260417T180000Z&amp;details=Serie+de+Webinars+Packaging+Inteligente+2026&amp;location=Zoom&#10;• Sesión 2: https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Webinar+SWAT:+Pruebas+ISTA+-+Angel+Pelgot&amp;dates=20260424T170000Z/20260424T180000Z&amp;details=Serie+de+Webinars+Packaging+Inteligente+2026&amp;location=Zoom&#10;• Sesión 3: https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Webinar+SWAT:+Empaque+Foam+-+Jos%C3%A9+Luis+Castro&amp;dates=20260508T170000Z/20260508T180000Z&amp;details=Serie+de+Webinars+Packaging+Inteligente+2026&amp;location=Zoom&#10;• Sesión 4: https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Webinar+SWAT:+Empaque+Papel+-+Sergio+Taboada&amp;dates=20260515T170000Z/20260515T180000Z&amp;details=Serie+de+Webinars+Packaging+Inteligente+2026&amp;location=Zoom&#10;&#10;También puedes descargar los archivos .ics desde: https://swatpackagingteam.mx/webinar?registered=true&#10;&#10;Te recomendamos unirte 5 minutos antes de cada sesión.&#10;&#10;¿Preguntas? Contáctanos:&#10;📞 +52 (663) 110-7814&#10;💬 WhatsApp: wa.me/526631107814&#10;&#10;¡Nos vemos el 17 de abril!&#10;— El equipo SWAT Packaging" />
+    <input type="hidden" name="autoresponse_message" value="¡Hola! Gracias por registrarte a la Serie de Webinars SWAT Packaging 'Empaque Inteligente para Manufactura y E-commerce'.&#10;&#10;IMPORTANTE - PASO 2 PARA COMPLETAR TU REGISTRO:&#10;Para recibir tu enlace personal de Zoom y un archivo .ics para tu calendario, necesitas confirmar tu lugar en cada sesión haciendo clic en los links de abajo. Zoom te enviará una confirmación individual por sesión con tu acceso único.&#10;&#10;CONFIRMA TU LUGAR EN ZOOM (1 clic por sesión):&#10;&#10;Sesión 1 - Vie 17 abril, 10:00 AM PST&#10;Diseño Corrugado e Innovación Estructural - Ivan Alcaraz&#10;https://veritiv.zoom.us/webinar/register/WN_7bQ_MiR0S9eZZVQsleFc3Q&#10;&#10;Sesión 2 - Vie 24 abril, 10:00 AM PST&#10;Pruebas ISTA y Aseguramiento de Calidad - Angel Pelgot&#10;https://veritiv.zoom.us/webinar/register/WN_Qa3tGLvjTAexlxIWnmrtEg&#10;&#10;Sesión 3 - Vie 8 mayo, 10:00 AM PST&#10;Empaque Interno de Foam y Materiales Reciclados - José Luis Castro&#10;https://veritiv.zoom.us/webinar/register/WN_Rt-k8kSFTjeadmahAU4Mcw&#10;&#10;Sesión 4 - Vie 15 mayo, 10:00 AM PST&#10;Empaque Interno de Papel 100% Sustentable - Sergio Darío Taboada&#10;https://veritiv.zoom.us/webinar/register/WN_V6YJSGtuR5SZkKJN6uCkOQ&#10;&#10;BONO EXCLUSIVO PARA ASISTENTES COMPLETOS:&#10;Quienes asistan en vivo a las 4 sesiones reciben una Auditoría 360 sin costo: una Revisión de Proceso Total Solutions en sitio donde nuestros ingenieros evalúan 8 áreas clave de tu operación de empaque (JIT/VMI, throughput, automatización, innovación, reducción de material, mano de obra, ambiental, ergonomía).&#10;&#10;Cada sesión dura 90 minutos, 100% en español. Te recomendamos unirte 5 minutos antes.&#10;&#10;¿Preguntas? Responde a este correo o contáctanos:&#10;Tel: +52 (663) 110-7814&#10;WhatsApp: wa.me/526631107814&#10;Email: fabian.valenzuela@veritiv.com&#10;&#10;Nos vemos el 17 de abril.&#10;&#10;Fabián Valenzuela&#10;Veritiv Landsberg | SWAT Packaging" />
     <input type="checkbox" name="botcheck" class="hidden" />
 
     <!-- Name -->
@@ -172,6 +175,14 @@ const { locale = 'es', id = 'webinar-form' } = Astro.props;
         var form = e.target;
         var formData = new FormData(form);
 
+        // Dedup check: prevent re-registration with the same email
+        var submittedEmail = (formData.get('email') || '').toString().toLowerCase().trim();
+        var registeredEmail = localStorage.getItem('swat_webinar_registered_email');
+        if (submittedEmail && registeredEmail === submittedEmail) {
+          alert('Ya estás registrado(a) con este correo. Revisa tu bandeja de entrada y la carpeta de spam para encontrar los enlaces de Zoom de las 4 sesiones. Si no los encuentras, escribe a fabian.valenzuela@veritiv.com.');
+          return false;
+        }
+
         // Fire tracking pixels immediately
         if (typeof gtag !== 'undefined') {
           gtag('event', 'generate_lead', {
@@ -196,7 +207,11 @@ const { locale = 'es', id = 'webinar-form' } = Astro.props;
         // Submit to Web3Forms via fetch
         fetch(form.action, { method: 'POST', body: formData })
           .then(function(res) { return res.json(); })
-          .then(function(data) {
+          .then(function() {
+            // Persist email so client-side dedup blocks re-registration
+            if (submittedEmail) {
+              localStorage.setItem('swat_webinar_registered_email', submittedEmail);
+            }
             // Redirect to success page
             var redirect = form.querySelector('input[name="redirect"]');
             if (redirect && redirect.value) {
