@@ -1,0 +1,37 @@
+---
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import { getServices } from '../../data/services';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const services = getServices(locale);
+---
+
+<section class="py-20 lg:py-28 bg-surface-light">
+  <Container>
+    <SectionHeading
+      title={t(locale, 'serviceGrid.title')}
+      subtitle={t(locale, 'serviceGrid.subtitle')}
+      tag={t(locale, 'serviceGrid.tag')}
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+      {services.map((service) => (
+        <Card
+          title={service.title}
+          description={service.shortDescription}
+          icon={service.icon}
+          badge={service.badge}
+          href={localizeHref(locale, `/services#${service.slug}`)}
+        />
+      ))}
+    </div>
+  </Container>
+</section>

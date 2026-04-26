@@ -1,0 +1,34 @@
+---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+
+interface Props {
+  light?: boolean;
+  locale?: Locale;
+}
+
+const { light = false, locale = 'es' } = Astro.props;
+---
+
+<div class="flex items-center gap-2" data-animate>
+  <div
+    class:list={[
+      'h-px flex-1 max-w-16',
+      light ? 'bg-veritiv-600' : 'bg-veritiv-200',
+    ]}
+  />
+  <span
+    class:list={[
+      'text-xs font-medium uppercase tracking-widest',
+      light ? 'text-accent-400' : 'text-accent-500',
+    ]}
+  >
+    {t(locale, 'common.veritivBadge')}
+  </span>
+  <div
+    class:list={[
+      'h-px flex-1 max-w-16',
+      light ? 'bg-veritiv-600' : 'bg-veritiv-200',
+    ]}
+  />
+</div>

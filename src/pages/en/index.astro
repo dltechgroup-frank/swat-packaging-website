@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroCarousel from '../../components/react/HeroCarousel';
+import WasteReductionChart from '../../components/react/WasteReductionChart';
+import VeritivBadge from '../../components/shared/VeritivBadge.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import ServiceGrid from '../../components/sections/ServiceGrid.astro';
+import NearshoreSection from '../../components/sections/NearshoreSection.astro';
+import SectorShowcase from '../../components/sections/SectorShowcase.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import Container from '../../components/ui/Container.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+import { getTrustStats } from '../../data/stats';
+
+const locale: Locale = 'en';
+const trustStats = getTrustStats(locale);
+
+const heroImages = [
+  '/images/webinar_hero.jpeg', // Webinar speakers banner
+  'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80', // Cardboard boxes warehouse
+  'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80', // Shipping containers port
+  'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1920&q=80', // Recycling cardboard
+  'https://images.unsplash.com/photo-1616432043562-3671ea2e5242?auto=format&fit=crop&w=1920&q=80', // Industrial warehouse pallets
+  'https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1920&q=80', // Warehouse barcode scanning
+];
+
+const slideLinks = ['/webinar', '/audit', '/audit', '/audit', '/audit', '/audit'];
+
+const carouselSlides = [6, 1, 2, 3, 4, 5].map((n, i) => ({
+  tag: t(locale, `carousel.slide${n}.tag`),
+  title: t(locale, `carousel.slide${n}.title`),
+  subtitle: t(locale, `carousel.slide${n}.subtitle`),
+  cta: { text: t(locale, `carousel.slide${n}.cta`), href: localizeHref(locale, slideLinks[i]) },
+  image: heroImages[i],
+}));
+
+const chartData = [
+  { label: t(locale, 'chart.materialWaste'), before: 100, after: 70, unit: '%' },
+  { label: t(locale, 'chart.freightCost'), before: 100, after: 80, unit: '%' },
+  { label: t(locale, 'chart.complianceGaps'), before: 85, after: 15, unit: '%' },
+  { label: t(locale, 'chart.packagingFootprint'), before: 100, after: 80, unit: '%' },
+];
+---
+
+<BaseLayout title={t(locale, 'home.title')} locale={locale}>
+  <HeroCarousel slides={carouselSlides} interval={6000} client:load />
+
+  <section class="py-10 bg-white">
+    <Container>
+      <div class="flex justify-center mb-8">
+        <VeritivBadge locale={locale} />
+      </div>
+    </Container>
+  </section>
+
+  <TrustBar stats={trustStats} />
+
+  <ServiceGrid locale={locale} />
+
+  <!-- Waste Reduction Chart -->
+  <section class="py-20 lg:py-28 bg-white">
+    <Container narrow>
+      <WasteReductionChart
+        title={t(locale, 'chart.wasteTitle')}
+        subtitle={t(locale, 'chart.wasteSubtitle')}
+        data={chartData}
+        beforeLabel={t(locale, 'chart.before')}
+        afterLabel={t(locale, 'chart.after')}
+        client:visible
+      />
+    </Container>
+  </section>
+
+  <NearshoreSection locale={locale} />
+
+  <SectorShowcase locale={locale} />
+
+  <CtaBanner
+    title={t(locale, 'common.ctaDefaultTitle')}
+    description={t(locale, 'common.ctaDefaultDescription')}
+    buttonText={t(locale, 'common.ctaDefaultButton')}
+    buttonHref={localizeHref(locale, '/audit')}
+  />
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+
+const phases = [
+  { num: '01', title: t(locale, 'services.process1Title'), desc: t(locale, 'services.process1Desc') },
+  { num: '02', title: t(locale, 'services.process2Title'), desc: t(locale, 'services.process2Desc') },
+  { num: '03', title: t(locale, 'services.process3Title'), desc: t(locale, 'services.process3Desc') },
+  { num: '04', title: t(locale, 'services.process4Title'), desc: t(locale, 'services.process4Desc') },
+  { num: '05', title: t(locale, 'services.process5Title'), desc: t(locale, 'services.process5Desc') },
+  { num: '06', title: t(locale, 'services.process6Title'), desc: t(locale, 'services.process6Desc') },
+];
+---
+
+<section class="py-20 lg:py-28 bg-surface-light">
+  <Container>
+    <!-- Header -->
+    <div class="text-center mb-14" data-animate>
+      <Badge text={t(locale, 'services.processTag')} variant="teal" />
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-veritiv-900 tracking-tight">
+        {t(locale, 'services.processTitle')}
+      </h2>
+      <p class="mt-4 text-lg text-body-muted max-w-2xl mx-auto">
+        {t(locale, 'services.processSubtitle')}
+      </p>
+    </div>
+
+    <!-- 6-phase grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {phases.map((phase) => (
+        <div
+          class="bg-white rounded-xl p-5 border border-veritiv-100 flex flex-col gap-3 group hover:border-accent-500/40 hover:shadow-sm transition-all duration-200"
+          data-animate
+        >
+          <!-- Numbered circle -->
+          <div class="w-10 h-10 rounded-full bg-accent-500/10 flex items-center justify-center flex-shrink-0">
+            <span class="text-sm font-bold text-accent-500">{phase.num}</span>
+          </div>
+
+          <div>
+            <h3 class="text-base font-semibold text-veritiv-900 mb-1">{phase.title}</h3>
+            <p class="text-sm text-body-muted leading-relaxed">{phase.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

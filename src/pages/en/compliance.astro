@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Container from '../../components/ui/Container.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import ComplianceCard from '../../components/sections/ComplianceCard.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+import { getComplianceTopics } from '../../data/compliance';
+
+const locale: Locale = 'en';
+const complianceTopics = getComplianceTopics(locale);
+---
+
+<BaseLayout
+  title={t(locale, 'compliance.title')}
+  description={t(locale, 'compliance.metaDesc')}
+  locale={locale}
+>
+  <Hero
+    title={t(locale, 'compliance.heroTitle')}
+    subtitle={t(locale, 'compliance.heroSubtitle')}
+    image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20 lg:py-28 bg-white">
+    <Container narrow>
+      <div class="text-center" data-animate>
+        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
+          {t(locale, 'compliance.introTag')}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-veritiv-900 tracking-tight">
+          {t(locale, 'compliance.introTitle')}
+        </h2>
+        <p class="mt-6 text-body-muted leading-relaxed max-w-2xl mx-auto">
+          {t(locale, 'compliance.introP1')}
+        </p>
+        <p class="mt-4 text-body-muted leading-relaxed max-w-2xl mx-auto">
+          {t(locale, 'compliance.introP2')}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 lg:py-28 bg-surface-light">
+    <Container>
+      <SectionHeading
+        title={t(locale, 'compliance.pillarsTitle')}
+        subtitle={t(locale, 'compliance.pillarsSubtitle')}
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {complianceTopics.map((topic) => (
+          <ComplianceCard topic={topic} />
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-20 lg:py-28 bg-white">
+    <Container narrow>
+      <div class="prose prose-lg max-w-none" data-animate>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">{t(locale, 'compliance.tariffTitle')}</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              {t(locale, 'compliance.tariffP')}
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">{t(locale, 'compliance.sustainTitle')}</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              {t(locale, 'compliance.sustainP')}
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">{t(locale, 'compliance.docsTitle')}</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              {t(locale, 'compliance.docsP')}
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-veritiv-900 mb-4">{t(locale, 'compliance.proactiveTitle')}</h3>
+            <p class="text-body-muted leading-relaxed text-sm">
+              {t(locale, 'compliance.proactiveP')}
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <CtaBanner
+    title={t(locale, 'compliance.ctaTitle')}
+    description={t(locale, 'compliance.ctaDesc')}
+    buttonText={t(locale, 'compliance.ctaButton')}
+    buttonHref={localizeHref(locale, '/audit')}
+  />
+</BaseLayout>

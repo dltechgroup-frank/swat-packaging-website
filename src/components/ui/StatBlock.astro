@@ -1,0 +1,30 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  prefix?: string;
+  suffix?: string;
+  light?: boolean;
+}
+
+const { value, label, prefix, suffix, light = false } = Astro.props;
+---
+
+<div class="text-center" data-animate>
+  <div
+    class:list={[
+      'text-4xl lg:text-5xl font-bold tracking-tight',
+      light ? 'text-white' : 'text-veritiv-900',
+    ]}
+  >
+    {prefix}{value}{suffix}
+  </div>
+  <p
+    class:list={[
+      'mt-2 text-sm font-medium',
+      light ? 'text-veritiv-300' : 'text-body-muted',
+    ]}
+  >
+    {label}
+  </p>
+</div>

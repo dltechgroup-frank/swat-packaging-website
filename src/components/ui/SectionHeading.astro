@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  tag?: string;
+  light?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  align = 'center',
+  tag,
+  light = false,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'mb-12 lg:mb-16',
+    align === 'center' && 'text-center',
+  ]}
+  data-animate
+>
+  {tag && (
+    <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-accent-50 text-accent-600 mb-4">
+      {tag}
+    </span>
+  )}
+  <h2
+    class:list={[
+      'text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight',
+      light ? 'text-white' : 'text-veritiv-900',
+    ]}
+  >
+    {title}
+  </h2>
+  {subtitle && (
+    <p
+      class:list={[
+        'mt-4 text-lg max-w-2xl',
+        align === 'center' && 'mx-auto',
+        light ? 'text-veritiv-200' : 'text-body-muted',
+      ]}
+    >
+      {subtitle}
+    </p>
+  )}
+</div>

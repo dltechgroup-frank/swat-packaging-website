@@ -1,0 +1,70 @@
+---
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+import ServiceIcon from '../ui/ServiceIcon.astro';
+import type { Service } from '../../data/services';
+
+interface Props {
+  service: Service;
+  index: number;
+}
+
+const { service, index } = Astro.props;
+const isEven = index % 2 === 0;
+---
+
+<section
+  id={service.slug}
+  class:list={[
+    'py-16 lg:py-20 scroll-mt-24',
+    isEven ? 'bg-white' : 'bg-surface-light',
+  ]}
+>
+  <Container>
+    <div class:list={['grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center', !isEven && 'lg:grid-flow-dense']}>
+      <!-- Content -->
+      <div class:list={[!isEven && 'lg:col-start-2']} data-animate>
+        <div class="flex items-center gap-3 mb-4">
+          {service.badge && <Badge text={service.badge} variant="green" />}
+          <span class="text-xs text-veritiv-400 font-medium uppercase tracking-wider">
+            {service.sectors.map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' · ')}
+          </span>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold text-veritiv-900 tracking-tight">
+          {service.title}
+        </h2>
+
+        <p class="mt-4 text-body-muted leading-relaxed">
+          {service.fullDescription}
+        </p>
+
+        <ul class="mt-6 space-y-3">
+          {service.features.map((feature) => (
+            <li class="flex items-start gap-3 text-sm text-body-muted">
+              <svg class="w-5 h-5 mt-0.5 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Visual -->
+      <div class:list={[!isEven && 'lg:col-start-1']} data-animate>
+        <div class="relative rounded-2xl aspect-[4/3] overflow-hidden group">
+          <img
+            src={service.image}
+            alt={service.title}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-veritiv-900/40 to-transparent"></div>
+          <div class="absolute bottom-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+            <ServiceIcon icon={service.icon} size="md" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

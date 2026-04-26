@@ -1,0 +1,33 @@
+---
+import Container from '../ui/Container.astro';
+import StatBlock from '../ui/StatBlock.astro';
+import type { Stat } from '../../data/stats';
+
+interface Props {
+  stats: Stat[];
+  light?: boolean;
+}
+
+const { stats, light = false } = Astro.props;
+---
+
+<section
+  class:list={[
+    'py-12 lg:py-16',
+    light ? 'bg-veritiv-800' : 'bg-surface-light',
+  ]}
+>
+  <Container>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      {stats.map((stat) => (
+        <StatBlock
+          value={stat.value}
+          label={stat.label}
+          prefix={stat.prefix}
+          suffix={stat.suffix}
+          light={light}
+        />
+      ))}
+    </div>
+  </Container>
+</section>

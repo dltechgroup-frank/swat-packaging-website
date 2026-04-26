@@ -1,0 +1,152 @@
+---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+
+const speakers = [
+  {
+    name: t(locale, 'webinar.speaker1Name'),
+    role: t(locale, 'webinar.speaker1Role'),
+    session: t(locale, 'webinar.speaker1Session'),
+    bio: t(locale, 'webinar.speaker1Bio'),
+    experience: t(locale, 'webinar.speaker1Experience'),
+    image: '/images/ivan_alcaraz.png',
+    specialties: [
+      t(locale, 'webinar.speaker1Specialty1'),
+      t(locale, 'webinar.speaker1Specialty2'),
+      t(locale, 'webinar.speaker1Specialty3'),
+      t(locale, 'webinar.speaker1Specialty4'),
+    ],
+  },
+  {
+    name: t(locale, 'webinar.speaker2Name'),
+    role: t(locale, 'webinar.speaker2Role'),
+    session: t(locale, 'webinar.speaker2Session'),
+    bio: t(locale, 'webinar.speaker2Bio'),
+    experience: t(locale, 'webinar.speaker2Experience'),
+    image: '/images/angel_pelgot.png',
+    specialties: [
+      t(locale, 'webinar.speaker2Specialty1'),
+      t(locale, 'webinar.speaker2Specialty2'),
+      t(locale, 'webinar.speaker2Specialty3'),
+      t(locale, 'webinar.speaker2Specialty4'),
+    ],
+  },
+  {
+    name: t(locale, 'webinar.speaker3Name'),
+    role: t(locale, 'webinar.speaker3Role'),
+    session: t(locale, 'webinar.speaker3Session'),
+    bio: t(locale, 'webinar.speaker3Bio'),
+    experience: t(locale, 'webinar.speaker3Experience'),
+    image: '/images/sergio_dario.png',
+    specialties: [
+      t(locale, 'webinar.speaker3Specialty1'),
+      t(locale, 'webinar.speaker3Specialty2'),
+      t(locale, 'webinar.speaker3Specialty3'),
+      t(locale, 'webinar.speaker3Specialty4'),
+    ],
+  },
+  {
+    name: t(locale, 'webinar.speaker4Name'),
+    role: t(locale, 'webinar.speaker4Role'),
+    session: t(locale, 'webinar.speaker4Session'),
+    bio: t(locale, 'webinar.speaker4Bio'),
+    experience: t(locale, 'webinar.speaker4Experience'),
+    image: '/images/jose_luis.png',
+    specialties: [
+      t(locale, 'webinar.speaker4Specialty1'),
+      t(locale, 'webinar.speaker4Specialty2'),
+      t(locale, 'webinar.speaker4Specialty3'),
+      t(locale, 'webinar.speaker4Specialty4'),
+    ],
+  },
+];
+---
+
+<section class="py-16 lg:py-24 bg-surface-light">
+  <Container>
+    <div class="text-center mb-12" data-animate>
+      <Badge>{t(locale, 'webinar.speakerTag')}</Badge>
+      <h2 class="mt-4 text-3xl lg:text-4xl font-bold text-veritiv-900">
+        {t(locale, 'webinar.speakerTitle')}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {speakers.map((speaker) => (
+        <div class="bg-white rounded-2xl p-6 lg:p-8 border border-veritiv-100 shadow-sm hover:shadow-md transition-shadow" data-animate>
+          <!-- Speaker photo + experience badge -->
+          <div class="relative mb-6">
+            <img
+              src={speaker.image}
+              alt={speaker.name}
+              class="w-24 h-24 rounded-full mx-auto object-cover object-top border-2 border-veritiv-200"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-accent-500 text-white px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+              {speaker.experience}
+            </div>
+          </div>
+
+          <!-- Name & role -->
+          <div class="text-center mb-4">
+            <h3 class="text-xl font-bold text-veritiv-900">{speaker.name}</h3>
+            <p class="mt-1 text-sm text-accent-500 font-medium">{speaker.role}</p>
+            <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background-color: rgba(255, 103, 0, 0.15); color: #FF6700;">
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+              {speaker.session}
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <p class="text-sm text-body-muted leading-relaxed mb-6 text-center">
+            {speaker.bio}
+          </p>
+
+          <!-- Specialties -->
+          <div class="grid grid-cols-2 gap-2">
+            {speaker.specialties.map((specialty) => (
+              <div class="flex items-center gap-2 bg-surface-light rounded-lg px-3 py-2 border border-veritiv-50">
+                <svg class="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-xs text-veritiv-700">{specialty}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Combined social proof -->
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-body-muted" data-animate>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+        </svg>
+        <span>{t(locale, 'webinar.speakerSocialCompanies')}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+        </svg>
+        <span>{t(locale, 'webinar.speakerSocialCountries')}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+        </svg>
+        <span>{t(locale, 'webinar.speakerSocialYears')}</span>
+      </div>
+    </div>
+  </Container>
+</section>

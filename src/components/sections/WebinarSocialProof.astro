@@ -1,0 +1,155 @@
+---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+import LogoCarousel from '../ui/LogoCarousel.astro';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+
+const stats = [
+  { value: t(locale, 'webinar.socialStat1'), label: t(locale, 'webinar.socialStat1Label') },
+  { value: t(locale, 'webinar.socialStat2'), label: t(locale, 'webinar.socialStat2Label') },
+  { value: t(locale, 'webinar.socialStat3'), label: t(locale, 'webinar.socialStat3Label') },
+  { value: t(locale, 'webinar.socialStat4'), label: t(locale, 'webinar.socialStat4Label') },
+  { value: t(locale, 'webinar.socialStat5'), label: t(locale, 'webinar.socialStat5Label') },
+];
+
+const certifications = [
+  t(locale, 'webinar.socialCert1'),
+  t(locale, 'webinar.socialCert2'),
+  t(locale, 'webinar.socialCert3'),
+  t(locale, 'webinar.socialCert4'),
+  t(locale, 'webinar.socialCert5'),
+];
+
+const logos = [
+  // Existing brand logos
+  { name: 'Nestlé', src: '/images/logos/nestle.svg' },
+  { name: 'DHL Express', src: '/images/logos/dhl.svg' },
+  { name: 'Disney', src: '/images/logos/disney.svg' },
+  { name: 'Volkswagen', src: '/images/logos/volkswagen.svg' },
+  { name: 'MARS', src: '/images/logos/mars.svg' },
+  { name: 'Maersk', src: '/images/logos/maersk.svg' },
+  { name: 'Cummins', src: '/images/logos/cummins.svg' },
+  { name: 'Campbell\'s', src: '/images/logos/campbells.svg' },
+  { name: '7-Eleven', src: '/images/logos/7-eleven.svg' },
+  { name: 'Circle K', src: '/images/logos/circle-k.svg' },
+  { name: 'Toro', src: '/images/logos/toro.svg' },
+  { name: 'Jeld-Wen', src: '/images/logos/jeld-wen.svg' },
+  { name: 'Blue Diamond', src: '/images/logos/blue-diamond.svg' },
+  { name: 'Aviall', src: '/images/logos/aviall.svg' },
+  // Client logos from EMPRESAS
+  { name: 'Boeing', src: '/images/logos/empresas/boeing.png' },
+  { name: 'Learjet', src: '/images/logos/empresas/learjet.jpg' },
+  { name: 'IAC', src: '/images/logos/empresas/iac.jpg' },
+  { name: 'Ford', src: '/images/logos/empresas/ford.png' },
+  { name: 'GM', src: '/images/logos/empresas/gm.png' },
+  { name: 'Nissan', src: '/images/logos/empresas/logo-nissan-1.png' },
+  { name: 'Dell', src: '/images/logos/empresas/dell.png' },
+  { name: 'Google', src: '/images/logos/empresas/google.png' },
+  { name: 'GoPro', src: '/images/logos/empresas/gopro.png' },
+  { name: 'HP', src: '/images/logos/empresas/hp.png' },
+  { name: 'Caterpillar', src: '/images/logos/empresas/caterpillar.png' },
+  { name: 'Koch', src: '/images/logos/empresas/koch.png' },
+  { name: 'Galderma', src: '/images/logos/empresas/galderma.png' },
+  { name: 'Kendra Scott', src: '/images/logos/empresas/kendra.png' },
+  { name: "L'Oréal", src: '/images/logos/empresas/loreal.png' },
+  { name: 'The Home Depot', src: '/images/logos/empresas/the-home.png' },
+  { name: 'Snap-on', src: '/images/logos/empresas/sbap-on.png' },
+  { name: 'GE', src: '/images/logos/empresas/electric.png' },
+  // Industry sectors
+  { name: 'Restaurant & Food Service', src: '/images/logos/empresas/restautant-food-service-1.png' },
+  { name: 'Restaurant & Food Service', src: '/images/logos/empresas/restautant-food-service-2.png' },
+  { name: 'Restaurant & Food Service', src: '/images/logos/empresas/restautant-food-service-3.png' },
+  { name: 'Restaurant & Food Service', src: '/images/logos/empresas/restautant-food-service-4.png' },
+  { name: 'Office & Healthcare', src: '/images/logos/empresas/office-healthcare-1.png' },
+  { name: 'Office & Healthcare', src: '/images/logos/empresas/office-healthcare-2.png' },
+  { name: 'Office & Healthcare', src: '/images/logos/empresas/office-healthcare-3.jpg' },
+  { name: 'Office & Healthcare', src: '/images/logos/empresas/office-healthcare-4.jpg' },
+  { name: 'Wholesale & Retail', src: '/images/logos/empresas/wholesale-retail-1.png' },
+  { name: 'Wholesale & Retail', src: '/images/logos/empresas/wholesale-retail-2.png' },
+  { name: 'Wholesale & Retail', src: '/images/logos/empresas/wholesale-retail-3.png' },
+  { name: 'Wholesale & Retail', src: '/images/logos/empresas/wholesale-retail-4.png' },
+  { name: 'Large Venue', src: '/images/logos/empresas/large-venue-1.png' },
+  { name: 'Large Venue', src: '/images/logos/empresas/large-venue-2.png' },
+  { name: 'Large Venue', src: '/images/logos/empresas/large-venue-3.png' },
+  { name: 'Large Venue', src: '/images/logos/empresas/large-venue-4.png' },
+  { name: 'Government & Higher Ed', src: '/images/logos/empresas/government-higher-ed-1.png' },
+  { name: 'Government & Higher Ed', src: '/images/logos/empresas/government-higher-ed-2.png' },
+  { name: 'Government & Higher Ed', src: '/images/logos/empresas/government-higher-ed-3.png' },
+  { name: 'Government & Higher Ed', src: '/images/logos/empresas/government-higher-ed-4.png' },
+  { name: 'Manufacturing & Logistics', src: '/images/logos/empresas/manufacturing-logistics-1.png' },
+  { name: 'Manufacturing & Logistics', src: '/images/logos/empresas/manufacturing-logistics-2.png' },
+  { name: 'Manufacturing & Logistics', src: '/images/logos/empresas/manufacturing-logistics-3.png' },
+  { name: 'Manufacturing & Logistics', src: '/images/logos/empresas/manufacturing-logistics-4.png' },
+  { name: 'Building Materials', src: '/images/logos/empresas/building-materials-1.png' },
+  { name: 'Building Materials', src: '/images/logos/empresas/building-materials-2.png' },
+  { name: 'Building Materials', src: '/images/logos/empresas/building-materials-3.png' },
+  { name: 'Building Materials', src: '/images/logos/empresas/building-materials-4.png' },
+  { name: 'Food & Beverage', src: '/images/logos/empresas/food-beverage-1.png' },
+  { name: 'Food & Beverage', src: '/images/logos/empresas/food-beverage-2.png' },
+  { name: 'Food & Beverage', src: '/images/logos/empresas/food-beverage-3.png' },
+  { name: 'Food & Beverage', src: '/images/logos/empresas/food-beverage-4.png' },
+  { name: 'Ecommerce', src: '/images/logos/empresas/ecommerce-1.png' },
+  { name: 'Ecommerce', src: '/images/logos/empresas/ecommerce-2.png' },
+  { name: 'Ecommerce', src: '/images/logos/empresas/ecommerce-3.png' },
+  { name: 'Ecommerce', src: '/images/logos/empresas/ecommerce-4.png' },
+  { name: 'Healthcare', src: '/images/logos/empresas/healthcare-1.png' },
+  { name: 'Healthcare', src: '/images/logos/empresas/healthcare-2.png' },
+  { name: 'Healthcare', src: '/images/logos/empresas/healthcare-3.png' },
+  { name: 'Healthcare', src: '/images/logos/empresas/healthcare-4.png' },
+  { name: 'Logistics', src: '/images/logos/empresas/logistics-1.png' },
+  { name: 'Logistics', src: '/images/logos/empresas/logistics-2.png' },
+  { name: 'Logistics', src: '/images/logos/empresas/logistics-3.png' },
+  { name: 'Logistics', src: '/images/logos/empresas/logistics-4.png' },
+];
+
+// Split logos into two rows for a richer carousel effect
+const midpoint = Math.ceil(logos.length / 2);
+const row1 = logos.slice(0, midpoint);
+const row2 = logos.slice(midpoint);
+---
+
+<section class="py-16 lg:py-20 bg-white">
+  <Container>
+    <div class="text-center mb-10" data-animate>
+      <Badge>{t(locale, 'webinar.socialTag')}</Badge>
+      <h2 class="mt-4 text-2xl lg:text-3xl font-bold text-veritiv-900">
+        {t(locale, 'webinar.socialTitle')}
+      </h2>
+    </div>
+
+    <!-- Stats row -->
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-10" data-animate>
+      {stats.map((stat) => (
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-accent-500">{stat.value}</div>
+          <p class="mt-1 text-xs lg:text-sm text-body-muted">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Certifications -->
+    <div class="flex flex-wrap items-center justify-center gap-4" data-animate>
+      {certifications.map((cert) => (
+        <div class="flex items-center gap-2 px-4 py-2 bg-surface-light rounded-full border border-veritiv-100">
+          <svg class="w-4 h-4 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+          </svg>
+          <span class="text-sm font-medium text-veritiv-700">{cert}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Client logos carousel -->
+    <div class="mt-10 space-y-4">
+      <LogoCarousel logos={row1} speed={45} />
+      <LogoCarousel logos={row2} speed={50} />
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Container from '../../components/ui/Container.astro';
+import SectorShowcase from '../../components/sections/SectorShowcase.astro';
+import ServiceDetail from '../../components/sections/ServiceDetail.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import DesignProcess from '../../components/sections/DesignProcess.astro';
+import type { Locale } from '../../i18n/config';
+import { t, localizeHref } from '../../i18n/utils';
+import { getServices } from '../../data/services';
+
+const locale: Locale = 'en';
+const services = getServices(locale);
+---
+
+<BaseLayout
+  title={t(locale, 'services.title')}
+  description={t(locale, 'services.metaDesc')}
+  locale={locale}
+>
+  <Hero
+    title={t(locale, 'services.heroTitle')}
+    subtitle={t(locale, 'services.heroSubtitle')}
+    image="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1920&q=80"
+    compact
+  />
+
+  <section class="py-6 bg-white border-b border-veritiv-100 sticky top-16 lg:top-20 z-30 backdrop-blur-sm bg-white/95">
+    <Container>
+      <nav class="flex gap-3 overflow-x-auto pb-1 scrollbar-hide">
+        {services.map((service) => (
+          <a
+            href={`#${service.slug}`}
+            class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-veritiv-500 hover:text-accent-500 hover:bg-accent-50 rounded-full transition-colors duration-200 whitespace-nowrap"
+          >
+            {service.title}
+          </a>
+        ))}
+      </nav>
+    </Container>
+  </section>
+
+  <DesignProcess locale={locale} />
+
+  <SectorShowcase locale={locale} />
+
+  {services.map((service, index) => (
+    <ServiceDetail service={service} index={index} />
+  ))}
+
+  <CtaBanner
+    title={t(locale, 'services.ctaTitle')}
+    description={t(locale, 'services.ctaDesc')}
+    buttonText={t(locale, 'services.ctaButton')}
+    buttonHref={localizeHref(locale, '/audit')}
+  />
+</BaseLayout>
