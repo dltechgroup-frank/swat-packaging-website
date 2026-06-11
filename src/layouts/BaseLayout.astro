@@ -46,12 +46,10 @@ const currentPath = Astro.url.pathname;
       document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
     </script>
 
-    <!-- Voiceflow lead-capture chat widget. Replace VF_PROJECT_ID with the real
-         Voiceflow project ID to enable; the widget does not load while the
-         placeholder is in place. -->
+    <!-- Voiceflow lead-capture chat widget (SWAT Packaging Lead Agent). -->
     <script is:inline define:vars={{ locale }}>
       (function () {
-        const VF_PROJECT_ID = 'VF_PROJECT_ID';
+        const VF_PROJECT_ID = '6a2a450683c3e0c5dfc85c56';
         if (!/^[a-f0-9]{24}$/i.test(VF_PROJECT_ID)) return;
         const s = document.createElement('script');
         s.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
