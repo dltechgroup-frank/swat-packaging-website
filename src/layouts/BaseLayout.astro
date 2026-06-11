@@ -45,5 +45,27 @@ const currentPath = Astro.url.pathname;
       );
       document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
     </script>
+
+    <!-- Voiceflow lead-capture chat widget. Replace VF_PROJECT_ID with the real
+         Voiceflow project ID to enable; the widget does not load while the
+         placeholder is in place. -->
+    <script is:inline define:vars={{ locale }}>
+      (function () {
+        const VF_PROJECT_ID = 'VF_PROJECT_ID';
+        if (!/^[a-f0-9]{24}$/i.test(VF_PROJECT_ID)) return;
+        const s = document.createElement('script');
+        s.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+        s.type = 'text/javascript';
+        s.onload = function () {
+          window.voiceflow.chat.load({
+            verify: { projectID: VF_PROJECT_ID },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            launch: { event: { type: 'launch', payload: { language: locale } } },
+          });
+        };
+        document.body.appendChild(s);
+      })();
+    </script>
   </body>
 </html>
